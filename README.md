@@ -203,6 +203,11 @@ A function that returns itself, base case and recursive case.
 - some languages do tail call optimization to prevent the call stack from being very large, performs optimizstion on recursive algorithms, Java, Python dont allow, some C, Ruby and Javascript implementations do
 best to assume that our compiler or interpreter doesnt do this
 
+## Dynamic Programming
+
+optimal substrcuture
+overlapping subproblems
+
 ## Memoization
 
 technique used to prevent overlapping subproblems, algorithms caches results and picks from there if already been computed
@@ -211,7 +216,7 @@ fibinocci is great example of this
 common startegy for dynamic programming problems, problems that are coposed of solutions to the same problem with smaller inputs
 another good strat, more common is going bottom up 
 
-## Bottom Up 
+## Bottom Up (Tabulation)
 
 - a way to avoid recursion, as recursion has a memory cost because of the call stack it creates
 - typically start at the beginning, whereas recursion starts at end and works its way back
@@ -404,6 +409,11 @@ in/pre/postorder traversals
 AVL trees
 B-Tress
 Red black tree
+
+
+greedy
+always makes the choice that seems the best in the moment
+makes a locally-optimal choice in the hope that this choice will lead to a globally-optimal solution.
 
 
 ## Language Notes
