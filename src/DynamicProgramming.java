@@ -1,8 +1,29 @@
 import b.a.P;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+
+class NodeBounds {
+    int upperBound;
+    int lowerBound;
+    BinaryTreeNode node;
+
+    NodeBounds(BinaryTreeNode node, int upperBound, int lowerBound) {
+        this.node = node;
+        this.upperBound = upperBound;
+        this.lowerBound = lowerBound;
+    }
+}
+
+class NodeDepthPair {
+    int depth;
+    BinaryTreeNode node;
+
+    NodeDepthPair(int depth, BinaryTreeNode node) {
+        this.depth  = depth;
+        this.node = node;
+    }
+}
 
 /**
  * Cake structure for cake thief question.
@@ -19,35 +40,9 @@ class CakeType {
     }
 }
 
-/**
- * Structure for a meeting in a calendar system.
- * See 
- */
-class Meeting {
-
-    private int startTime;
-    private int endTime;
-
-    public Meeting(int startTime, int endTime) {
-        // number of 30 min blocks past 9:00 am
-        this.startTime = startTime;
-        this.endTime   = endTime;
-    }
-
-    public int getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(int startTime) {
-        this.startTime = startTime;
-    }
-
-    public int getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(int endTime) {
-        this.endTime = endTime;
+class InfinityException extends RuntimeException {
+    public InfinityException() {
+        super("Max value is infinity!");
     }
 }
 
@@ -144,14 +139,32 @@ public class DynamicProgramming {
      * @param weightCapacity The capacity of the bag.
      * @return The maximum value in cakes that could be put in the bag.
      */
-    public int maxDuffelBagValue(CakeType[] cakes, int weightCapacity) {
-        // brute force is to go through every combination of cakes
+    public long maxDuffelBagValue(CakeType[] cakes, int weightCapacity) {
 
-        // next, would be to find the cake with the highest value, put that in the bag and then move to second highest value
-        // this wouldnt work because it doesnt take into account the weight
+        long[] maxValuesAtCapacities = new long[weightCapacity+1];
 
-        // next, could look for highest value/weight ratio
-        return 4;
+        for (int currentCapacity = 0; currentCapacity <= weightCapacity; currentCapacity++) {
+
+            long maxValueForCapacity = 0;
+
+            for (CakeType cake : cakes) {
+
+                if (cake.weight == 0 && cake.value != 0) {
+                    throw new InfinityException();
+                }
+
+                if (cake.weight < currentCapacity) {
+                    long maxValueUsingCake = cake.weight + maxValuesAtCapacities[currentCapacity-cake.weight];
+
+                    maxValueForCapacity = Math.max(maxValueForCapacity, maxValueUsingCake);
+                }
+            }
+
+            maxValuesAtCapacities[currentCapacity] = maxValueForCapacity;
+
+        }
+
+        return maxValuesAtCapacities[weightCapacity];
     }
 
     ////////////////////
@@ -197,6 +210,264 @@ public class DynamicProgramming {
         }
 
         return numPossibilities;
+    }
+
+    /**
+     *
+     * @param amount
+     * @param denominations
+     * @return
+     */
+    private static int computeCoinCollectionWaysBottomUp(int amount, int[] denominations) {
+        int[] waysOfDoingNCents = new int[amount +1];
+
+        waysOfDoingNCents[0] = 1; // one way to make zero
+
+        for (int coin : denominations) {
+            for (int higherAmount = coin; higherAmount <= amount; higherAmount++) {
+                int higherAmountRemainder = higherAmount - coin;
+                waysOfDoingNCents[higherAmount] += waysOfDoingNCents[higherAmountRemainder];
+            }
+        }
+
+        return waysOfDoingNCents[amount];
+    }
+
+    /////////////////////////////
+    /* Find 2nd Largest Value */
+    ///////////////////////////
+
+    public static int findLargestValueInBSTIterative(BinaryTreeNode rootNode) {
+
+        BinaryTreeNode current = rootNode;
+        BinaryTreeNode largest = null;
+
+        while(current.right != null) {
+
+            if (current.value > largest.value) {
+                largest = current;
+            }
+
+            current = current.right;
+        }
+
+        return largest.value;
+    }
+
+    public static int findSecondLargestValueInBSTIterative(BinaryTreeNode rootNode) {
+        if (rootNode == null || (rootNode.right == null && rootNode.left == null)) {
+            throw new IllegalArgumentException("Tree must have at least two nodes!");
+        }
+
+        BinaryTreeNode current = rootNode;
+
+        while(true) {
+
+            if (current.left != null && current.right == null) {
+                return findLargestValueInBSTIterative(current.left);
+            }
+
+            if (current.right != null && current.right.right == null && current.right.left == null) {
+                return current.value;
+            }
+
+            current = current.right;
+        }
+    }
+
+    public static int findLargestValueInBSTRecursive(BinaryTreeNode rootNode) {
+
+        if (rootNode == null) {
+            throw new IllegalArgumentException("Tree must have at least one node!");
+        }
+
+        if (rootNode.right != null) {
+            return findLargestValueInBSTRecursive(rootNode.right);
+        }
+
+        return rootNode.value;
+    }
+
+    public static int findSecondLargestValueInBST(BinaryTreeNode rootNode) {
+
+        if (rootNode == null || (rootNode.right == null && rootNode.left == null)) {
+            throw new IllegalArgumentException("Tree must have at least two nodes!");
+        }
+
+        // first cover when you are at the largest element with left subtree
+        if (rootNode.right == null & rootNode.left != null) {
+            return findLargestValueInBSTRecursive(rootNode.left);
+        }
+
+        // now when at the parent and child doesnt have left subtree
+        if (rootNode.right != null && rootNode.right.right == null && rootNode.right.left == null) {
+            return rootNode.value;
+        }
+
+        return findLargestValueInBSTRecursive(rootNode.right);
+    }
+
+
+    public static void deleteBinaryTree(BinaryTreeNode rootNode) {
+
+        // post order
+
+        if (rootNode == null) {
+            return;
+        }
+
+        deleteBinaryTree(rootNode.left);
+        deleteBinaryTree(rootNode.right);
+        rootNode = null;
+    }
+
+    public static BinaryTreeNode cloneBinaryTree(BinaryTreeNode rootNode) {
+        // pre order
+
+        if (rootNode == null) {
+            return null;
+        }
+
+        BinaryTreeNode newTree = new BinaryTreeNode(rootNode.value);
+        newTree.left = cloneBinaryTree(rootNode.left);
+        newTree.right = cloneBinaryTree(rootNode.right);
+        return newTree;
+    }
+
+    public static BinaryTreeNode insertBinaryTree(BinaryTreeNode rootNode, int value) {
+
+        if (rootNode == null) {
+            rootNode = new BinaryTreeNode(value);
+            return rootNode;
+        }
+
+        if (value < rootNode.value) {
+            rootNode.left = insertBinaryTree(rootNode.left, value);
+        } else if (value > rootNode.value) {
+            rootNode.right = insertBinaryTree(rootNode.right, value);
+        }
+
+        return rootNode;
+    }
+
+    //////////////////////////
+    /* Find in Ordered Set */
+    ////////////////////////
+
+    public static Boolean binarySearch(int[] numbers, int target) {
+
+        int floorIndex = -1;
+        int ceilingIndex = numbers.length;
+
+        while (floorIndex + 1 < ceilingIndex) {
+            int distance = ceilingIndex - floorIndex;
+            int halfDistance = distance/2;
+            int guessIndex = floorIndex + halfDistance;
+
+            int guessValue = numbers[guessIndex];
+
+            if (guessValue == target) {
+                return true;
+            }
+
+            if (guessValue > target) {
+                ceilingIndex = guessIndex;
+            } else {
+                floorIndex = guessIndex;
+            }
+        }
+
+        return false;
+    }
+
+    ///////////////////////////
+    /* Balanced Binary Tree */
+    /////////////////////////
+
+
+    public static Boolean isSuperBalanced(BinaryTreeNode rootNode) {
+
+        // an empty tree is balanced
+        if (rootNode == null) {
+            return true;
+        }
+
+        // contains a list of depths
+        // if there are more than two depths it is not balanced
+        // if there are two depths that are greater than 1 apart
+        List<Integer> depths = new ArrayList<>();
+
+        // holds a list of nodes during search
+        // depth first uses a stack, breath uses a queue
+        Stack<NodeDepthPair> nodes = new Stack<>();
+        nodes.push(new NodeDepthPair(0, rootNode));
+
+        // begin traversal
+        while(!nodes.isEmpty()) {
+
+            NodeDepthPair nodeDepthPair = nodes.pop();
+            BinaryTreeNode node = nodeDepthPair.node;
+            int depth = nodeDepthPair.depth;
+
+            // case that is a leaf node
+            if (node.left != null && node.right != null) {
+
+                if (!depths.contains(depth)) {
+                    depths.add(depth);
+
+                    if ((depths.size() > 2) || (depths.size() == 2 && Math.abs(depths.get(0) - depths.get(1)) > 1)) {
+                        return false;
+                    }
+                }
+
+            } else {
+                if (node.left != null) {
+                    nodes.push(new NodeDepthPair(depth + 1, node.left));
+                }
+                if (node.right != null) {
+                    nodes.push(new NodeDepthPair(depth + 1, node.right));
+                }
+            }
+        }
+
+        return true;
+    }
+
+    /////////////////////////////////
+    /* Binary Search Tree Checker */
+    ///////////////////////////////
+
+
+    public static Boolean isValidBinarySearchTree(BinaryTreeNode rootNode) {
+
+        if (rootNode == null) {
+            return true;
+        }
+
+        Stack<NodeBounds> nodes = new Stack<>();
+        nodes.push(new NodeBounds(rootNode, Integer.MAX_VALUE, Integer.MIN_VALUE));
+
+        while(!nodes.empty()) {
+
+            NodeBounds nodeBounds = nodes.pop();
+            BinaryTreeNode node = nodeBounds.node;
+            int lowerBound = nodeBounds.lowerBound;
+            int upperBound = nodeBounds.upperBound;
+
+            if (node.value <= lowerBound || node.value >= upperBound) {
+                return false;
+            }
+
+            if (node.left != null) {
+                nodes.push(new NodeBounds(node.left, node.value, lowerBound));
+            }
+
+            if (node.right != null) {
+                nodes.push(new NodeBounds(node.right, upperBound, node.value));
+            }
+        }
+
+        return true;
     }
 
     ///////////////////

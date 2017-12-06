@@ -361,8 +361,6 @@ edge list int[][] = { {2,1}, {3,1))
 adjacency list each item in the lsit is a node, each node has a list of adjacent nodes
 adjacency matrix 1's and 0's
 
-
-
 ## Algorithms
 
 Binary Search - to be used on a sorted list of numbers
@@ -425,6 +423,7 @@ functions in javascript create new scopes
 assignments don't get hoisted
 but declarations do in javascript
 closures
+primitives in javascript are pass by value
  
 solve problems with Java
 but be prepared to solve with Javascript
