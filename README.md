@@ -20,6 +20,7 @@ Utilised the following for my preparation:
 - [Data Structures](#datastructures)
     - Linked Lists (#linkedlist)
 - Algorithms
+- Design Patterns
 - Language Notes
     - Java
     - JavaScript
@@ -416,6 +417,9 @@ iterates through the problem space taking the best so far
 always makes the choice that seems the best in the moment
 makes a locally-optimal choice in the hope that this choice will lead to a globally-optimal solution.
 
+## Design Patterns
+
+Singleton pattern
 
 ## Language Notes
 

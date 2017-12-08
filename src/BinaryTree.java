@@ -1,13 +1,11 @@
-import b.a.P;
-
 import java.util.*;
 
 /**
  * Implementation of a node in a binary tree.
  * Includes a depth attribute that indicates nodes depth in the tree.
+ * Author: Robert Saunders
  */
 class BinaryTreeNode {
-    int depth;
     int value;
     BinaryTreeNode right;
     BinaryTreeNode left;
@@ -16,16 +14,23 @@ class BinaryTreeNode {
         this.value = value;
     }
 
-    BinaryTreeNode(int value, int depth) {
+    BinaryTreeNode(int value, BinaryTreeNode left, BinaryTreeNode right) {
         this.value = value;
-        this.depth = depth;
-    }
-
-    BinaryTreeNode(int value, int depth, BinaryTreeNode left, BinaryTreeNode right) {
-        this.value = value;
-        this.depth = depth;
         this.left = left;
         this.right = right;
+    }
+}
+
+/**
+ * Node depth helper class to help determine if a tree is super balanced.
+ */
+class BinaryTreeNodeDepthPair {
+    BinaryTreeNode node;
+    int depth;
+
+    BinaryTreeNodeDepthPair(BinaryTreeNode node, int depth) {
+        this.node = node;
+        this.depth = depth;
     }
 }
 
@@ -132,19 +137,24 @@ public class BinaryTree {
      */
     public void preorderIterative() {
 
+        // check if the tree is empty
         if (rootNode == null) {
             throw new IllegalArgumentException("The tree must have something in it!");
         }
 
+        // create a stack for the nodes
         Stack<BinaryTreeNode> nodes = new Stack<>();
-
+        // push the root onto the stack
         nodes.push(rootNode);
 
+        // traverse the tree
         while(!nodes.isEmpty()) {
+            // get the current node off of the stack
+            // print the current node values
             BinaryTreeNode currentNode = nodes.pop();
-
             System.out.print(currentNode.value + " ");
 
+            // add children nodes to the stack
             if (currentNode.right != null) {
                 nodes.push(currentNode.right);
             }
@@ -206,7 +216,34 @@ public class BinaryTree {
             }
 
             System.out.print(currentNode.value + " ");
+        }
+    }
 
+    /**
+     *
+     */
+    public void levelorderIterative() {
+
+        if (rootNode == null) {
+            throw new IllegalArgumentException("The tree must have something in it!");
+        }
+
+        Queue<BinaryTreeNode> nodes = new LinkedList<>();
+
+        nodes.add(rootNode);
+
+        while(!nodes.isEmpty()) {
+            BinaryTreeNode current = nodes.peek();
+            nodes.remove();
+
+            System.out.print(current.value + " ");
+
+            if (current.left != null) {
+                nodes.add(current.left);
+            }
+            if (current.right != null) {
+                nodes.add(current.right);
+            }
         }
     }
 
@@ -228,8 +265,12 @@ public class BinaryTree {
         // lets start our traversal at the beginning of the tree
         nodes.add(rootNode);
 
+        // traverse the tree
         while(!nodes.isEmpty()) {
+
+            // dequeue the current node
             BinaryTreeNode currentNode = nodes.peek();
+            //
             nodes.remove();
 
             if (currentNode.left == null) {
@@ -254,58 +295,59 @@ public class BinaryTree {
      */
     public Boolean isSuperBalanced(BinaryTreeNode rootNode) {
 
-        // an empty tree is super balanced
-        if (rootNode == null) {
-            return true;
-        }
-
-        // contains a list of depths
-        // if there are more than two depths it is not balanced
-        // if there are two depths that are greater than 1 apart
-        List<Integer> depths = new ArrayList<>();
-
-        // holds a list of nodes during search
-        // depth first uses a stack, breath uses a queue
-        Stack<NodeDepthPair> nodes = new Stack<>();
-        nodes.push(new NodeDepthPair(0, rootNode));
-
-        // begin traversal
-        while(!nodes.isEmpty()) {
-
-            NodeDepthPair nodeDepthPair = nodes.pop();
-            BinaryTreeNode node = nodeDepthPair.node;
-            int depth = nodeDepthPair.depth;
-
-            // case that is a leaf node
-            if (node.left != null && node.right != null) {
-
-                if (!depths.contains(depth)) {
-                    depths.add(depth);
-
-                    if ((depths.size() > 2) || (depths.size() == 2 && Math.abs(depths.get(0) - depths.get(1)) > 1)) {
-                        return false;
-                    }
-                }
-
-            } else {
-                if (node.left != null) {
-                    nodes.push(new NodeDepthPair(depth + 1, node.left));
-                }
-                if (node.right != null) {
-                    nodes.push(new NodeDepthPair(depth + 1, node.right));
-                }
-            }
-        }
-
-        return true;
+//        // an empty tree is super balanced
+//        if (rootNode == null) {
+//            return true;
+//        }
+//
+//        // contains a list of depths
+//        // if there are more than two depths it is not balanced
+//        // if there are two depths that are greater than 1 apart
+//        List<Integer> depths = new ArrayList<>();
+//
+//        // holds a list of nodes during search
+//        // depth first uses a stack, breath uses a queue
+//        Stack<NodeDepthPair> nodes = new Stack<>();
+//        nodes.push(new NodeDepthPair(0, rootNode));
+//
+//        // begin traversal
+//        while(!nodes.isEmpty()) {
+//
+//            NodeDepthPair nodeDepthPair = nodes.pop();
+//            BinaryTreeNode node = nodeDepthPair.node;
+//            int depth = nodeDepthPair.depth;
+//
+//            // case that is a leaf node
+//            if (node.left != null && node.right != null) {
+//
+//                if (!depths.contains(depth)) {
+//                    depths.add(depth);
+//
+//                    if ((depths.size() > 2) || (depths.size() == 2 && Math.abs(depths.get(0) - depths.get(1)) > 1)) {
+//                        return false;
+//                    }
+//                }
+//
+//            } else {
+//                if (node.left != null) {
+//                    nodes.push(new NodeDepthPair(depth + 1, node.left));
+//                }
+//                if (node.right != null) {
+//                    nodes.push(new NodeDepthPair(depth + 1, node.right));
+//                }
+//            }
+//        }
+//
+     return true;
     }
 
-    /////////////////////////////////
-    /* Binary Search Tree Checker */
-    ///////////////////////////////
-
-
-    public static Boolean isValidBinarySearchTree(BinaryTreeNode rootNode) {
+    /**
+     * Checks if a binary tree is a valid binary search tree.
+     * Binary search tree are sorted based on values.
+     * @param rootNode The root node of the tree.
+     * @return True if the tree is BST.
+     */
+    public Boolean isValidBinarySearchTree(BinaryTreeNode rootNode) {
 
         if (rootNode == null) {
             return true;
