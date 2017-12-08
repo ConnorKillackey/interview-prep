@@ -4,14 +4,33 @@
  */
 public class Searching {
 
-    /**
-     * Implementation of the binary search algorithm.
-     * Finds a number from a sorted list.
-     * @param numArray The array to search.
-     * @param target The target to search for.
-     * @return True if the element is present in array.
-     */
-    public Boolean binarySearch(int[] numArray, int target) {
-        return null;
+    //////////////////////////
+    /* Find in Ordered Set */
+    ////////////////////////
+
+    public static Boolean binarySearch(int[] numbers, int target) {
+
+        int floorIndex = -1;
+        int ceilingIndex = numbers.length;
+
+        while (floorIndex + 1 < ceilingIndex) {
+            int distance = ceilingIndex - floorIndex;
+            int halfDistance = distance/2;
+            int guessIndex = floorIndex + halfDistance;
+
+            int guessValue = numbers[guessIndex];
+
+            if (guessValue == target) {
+                return true;
+            }
+
+            if (guessValue > target) {
+                ceilingIndex = guessIndex;
+            } else {
+                floorIndex = guessIndex;
+            }
+        }
+
+        return false;
     }
 }

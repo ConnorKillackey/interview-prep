@@ -5,7 +5,7 @@ import java.util.LinkedList;
  * Singly linked list only have one way traversal.
  * Author: Robert Saunders
  */
-public class SinglyLinkedList implements LinkedListInterface {
+public class SinglyLinkedList {
 
 
     public SinglyLinkedListNode head = null; // pointer to the head of the list
