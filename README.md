@@ -14,11 +14,12 @@ Utilized the following for my preparation:
 
 ## Glossary
 
-- [General Concepts]()
+- [General Concepts](#general-concepts)
     - [Random Access Memory]()
     - [Big O Notation]()
     - [Binary Numbers and Bits]()
     - [Recursion]()
+    - [Memory]()
     - [Logarithms]()
     - [Triangular Series]()
     - [Object Oriented Programming]()
@@ -356,6 +357,11 @@ rotations
 
 #### Graphs
 
+a tree with cycles
+implement with adjacency matrix
+array of pairs
+
+
 abstract data structure that consists of nodes (vertices) connected by edges
 
 two nodes connected by an edge are called adjacent or neighbors
@@ -379,12 +385,12 @@ approaching problems
 - base case and build, solve for the base case and then generalize
 - data structure brainstorm, run through a list of data structures and try to apply each one
 
-
 ### Techniques and Concepts
 
-- greedy
-- dynamic programming
 - divide and conquer
+- greedy
+
+- dynamic programming
 
 ### Sorting
 
@@ -451,6 +457,18 @@ makes a locally-optimal choice in the hope that this choice will lead to a globa
 
 ## Testing and Quality Assurance
 
+equivalence partionings - finding appropriate ranges
+boundary value analysis - check values at the boundaries
+positive and negative tests
+
+unit/intergration testing
+regression tests - test things after fixing
+load and stress testing
+security tests
+
+risk based testing
+combinatorial testing - finding pairs to test
+decision tables
 
 
 ## Language Notes

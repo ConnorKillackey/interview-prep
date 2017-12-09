@@ -7,6 +7,10 @@ import java.util.Arrays;
  */
 public class Strings {
 
+    /////////////////////
+    /* CHECK ANAGRAMS */
+    ///////////////////
+
     /**
      * Checks if two strings are anagrams.
      * Implementation with sorting arrays and comparing.

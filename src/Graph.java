@@ -44,7 +44,7 @@ class GraphNode {
 
 
 
-public class GraphColoring {
+public class Graph {
 
 
 
