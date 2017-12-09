@@ -1,5 +1,6 @@
 /**
  * Implementations of various different sorting algorithms.
+ * Important to know the pros and cons of each.
  * Author: Robert Saunders
  */
 public class Sorting {
