@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * Various implementations of string manipulation questions.
@@ -6,6 +7,110 @@ import java.util.Arrays;
  * Author: Robert Saunders
  */
 public class Strings {
+
+    /////////////////////////
+    /* PALINDROME CHECKER */
+    ///////////////////////
+
+    /**
+     * Checks if a string is a palindrome or not.
+     * @param checkString The string to check.
+     * @return True if is a palindrome, flase otherwise.
+     */
+    public static boolean isPalindrome(String checkString) {
+        for (int i = 0; i < checkString.length() - 1; i++) {
+            int difference = checkString.length() - (i+1);
+            if ((difference > 1) && (checkString.charAt(i) != checkString.charAt(difference))) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    ///////////////////////////
+    /* IS UNIQUE CHARACTERS */
+    /////////////////////////
+
+    /**
+     * Checks if a string has all unique characters.
+     * Implementation is that of counting sort.
+     * Could cross reference with every other character in array.
+     * @param stringToCheck The string to check.
+     * @return True if the string has all unique characters.
+     */
+    public boolean isUniqueCharacters(String stringToCheck) {
+        // assuming string has only ASCII characters
+        // create array of booleans
+        boolean[] values = new boolean[256];
+
+        // iterate through the string
+        // check if char has already been added to array
+        for (int i = 0; i<stringToCheck.length(); i++) {
+            int curr = stringToCheck.charAt(i);
+            if (values[curr]) return false;
+            values[curr] = true;
+        }
+
+        return true;
+    }
+
+    ///////////////////////////
+    /* CHARACTER OCCURRENCE */
+    /////////////////////////
+
+    /**
+     * Counts the number of times a character appears in a string.
+     * This is a bad implementation, because it counts every character, not the one we care about.
+     * Although one could argue this is better, because prevents reuse later.
+     * Can't get better than O(n) here because have to check every character.
+     * @param stringToCheck The string to check.
+     * @param checkChar The char to check occurs.
+     * @return The number of times the character appears.
+     */
+    public static int countNumTimesCharOccursInString(String stringToCheck, char checkChar) {
+
+        // convert the string into a character array
+        // initialize a hash map to keep count of characters
+        char[] charArray = stringToCheck.toCharArray();
+        HashMap<Character, Integer> table = new HashMap<>();
+
+        // iterate through each character
+        // update count in table
+        for (char current : charArray) {
+            if (table.containsKey(current)) {
+                int count = table.get(current);
+                table.put(current, ++count);
+            } else {
+                table.put(current, 1);
+            }
+        }
+
+        // return the count in the table or zero if character isn't in table
+        return table.containsKey(checkChar) ? table.get(checkChar) : 0;
+    }
+
+    /**
+     * Counts the number of times a character occurs in a string.
+     * @param stringToCheck The string to check.
+     * @param checkChar The character to check.
+     * @return The count of times the character occurred in word.
+     */
+    public static int countCharOccurence(String stringToCheck, char checkChar) {
+        //create a counter
+        int counter = 0;
+
+        // go through each character and check if equal to checkChar
+        // update the counter if it is
+        for (int i = 0; i < stringToCheck.length(); i++) {
+            if (stringToCheck.charAt(i) == checkChar) {
+                counter++;
+            }
+        }
+
+        // return the counter
+        return counter;
+    }
 
     /////////////////////
     /* CHECK ANAGRAMS */
@@ -18,7 +123,7 @@ public class Strings {
      * @param string2 Second string to compare with.
      * @return True if anagrams, otherwise false;
      */
-    public Boolean isAnagramArraySort(String string1, String string2) {
+    public static Boolean isAnagramArraySort(String string1, String string2) {
 
         // first check if the strings match in length
         if (string1.length() != string2.length()) {
@@ -42,7 +147,7 @@ public class Strings {
      * @param string2 Second string to compare with.
      * @return True if anagrams, otherwise false.
      */
-    public Boolean isAnagramCounter(String string1, String string2) {
+    public static Boolean isAnagramCounter(String string1, String string2) {
 
         // first check if the strings match in length
         if (string1.length() != string1.length()) {
@@ -80,6 +185,8 @@ public class Strings {
      * @param args Arguments passed into the execution.
      */
     public static void main(String[] args) {
-
+        System.out.println(Strings.countNumTimesCharOccursInString("Hello", 'j'));
+        System.out.println(Strings.countCharOccurence("Hello", 'e'));
+        System.out.println(Strings.isPalindrome("racecar"));
     }
 }

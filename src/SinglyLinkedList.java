@@ -1,3 +1,7 @@
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import org.apache.batik.dom.util.HashTable;
+
+import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
@@ -71,15 +75,23 @@ public class SinglyLinkedList {
      * @param singlyLinkedListNodeToAdd The node to add to the list.
      */
     public void addNodeToTail(SinglyLinkedListNode singlyLinkedListNodeToAdd) {
-        if (this.isEmpty()) { // first check if the list is empty
-            this.head = singlyLinkedListNodeToAdd; // set the head to be the new node if is empty
+        // first check if the list is empty
+        // if so set the node to add as the head
+        if (this.isEmpty()) {
+            this.head = singlyLinkedListNodeToAdd;
             return;
         }
-        SinglyLinkedListNode node = this.head; // start at the head
-        while (node.next != null) { // traverse list until last node
+
+        // start at the head
+        // traverse down the list until end
+        SinglyLinkedListNode node = this.head;
+
+        while (node.next != null) {
             node = node.next;
         }
-        node.next = singlyLinkedListNodeToAdd; // set the last node to be the new node
+
+        // set the new tail of the list
+        node.next = singlyLinkedListNodeToAdd;
     }
 
     /**
@@ -87,15 +99,120 @@ public class SinglyLinkedList {
      * @param singlyLinkedListNodeToAdd The node to add to the list.
      */
     public void addNodeToHead(SinglyLinkedListNode singlyLinkedListNodeToAdd) {
-        if (this.isEmpty()) { // first check if the list is empty
-            this.head = singlyLinkedListNodeToAdd; // set the new node to be the head
+
+        // check if the linked list is empty
+        // set the head to be new node to add
+        if (this.isEmpty()) {
+            this.head = singlyLinkedListNodeToAdd;
             return;
         }
 
-        SinglyLinkedListNode node = this.head; // store the current head
+        // store the current head
+        // set the new head
+        // update the new heads next to be the old head
+        SinglyLinkedListNode node = this.head;
+        this.head = singlyLinkedListNodeToAdd;
+        this.head.next = node;
+    }
 
-        this.head = singlyLinkedListNodeToAdd; // set the new head
-        this.head.next = node; // update the new heads next to be the old head
+    /**
+     * Deletes a node in a linked list, only using the reference to the node to delete.
+     * @param nodeToDelete The node to delete.
+     */
+    public void deleteNode(SinglyLinkedListNode nodeToDelete) {
+        // cannot solve this problem without a node to delete
+        // or if the node to delete is the last in the list
+        if (nodeToDelete == null || nodeToDelete.next == null) {
+            return;
+        }
+
+        // instead of deleting the node to delete
+        // we modify it with the contents of the next node
+        // subsequently deleting that node instead
+        SinglyLinkedListNode nextNode = nodeToDelete.next;
+        nodeToDelete.value = nextNode.value;
+        nodeToDelete.next = nextNode.next;
+    }
+
+    /**
+     * Removes duplicates from a linkedlist, this method uses a buffer to keep track of values.
+     * See below for alternative method that doesn't use a buffer.
+     */
+    public void removeDuplicatesWithBuffer() {
+
+        // first check if the linked list is empty
+        if (isEmpty()) {
+            throw new IllegalArgumentException("Cannot remove duplicates from an empty list!");
+        }
+
+        // create a buffer to store values to cross references against
+        // create a current (conductor) for list traversal
+        // initialize a prev node pointer to update as we move through the list
+        HashMap<Integer, Boolean> buffer = new HashMap<>();
+        SinglyLinkedListNode current = this.head;
+        SinglyLinkedListNode prev = null;
+
+        // traverse the list
+        // check buffer, remove node if needed
+        // otherwise add to buffer and move to next
+        while (current != null) {
+            if (buffer.containsKey(current.value)) {
+                prev.next = current.next;
+            }
+            else {
+                buffer.put(current.value, true);
+                prev = current;
+            }
+            current = current.next;
+        }
+    }
+
+    /**
+     * Removes duplicates from a linkedlist, this method does not use a buffer.
+     * Instead we use a runner to compare are nodes prior to current node.
+     */
+    public void removeDuplicatesWithoutBuffer() {
+
+        // first check if the list is empty
+        // can't find duplicates if the list is empty
+        if (isEmpty()) {
+            throw new IllegalArgumentException("The list is empty so there can't be any duplicates!");
+        }
+
+        // have to start one behind to begin runner
+        // set current to be the prev next
+        SinglyLinkedListNode prev = this.head;
+        SinglyLinkedListNode current = prev.next;
+
+        // iterate through the list until end
+        while (current != null) {
+            // create a runner, runner always starts are head
+            SinglyLinkedListNode runner = head;
+
+            // keep running until runner reaches current
+            while (runner != current) {
+                // if the runner value and the current are equal
+                // lets delete current and move to next iteration
+                if (runner.value == current.value) {
+                    SinglyLinkedListNode tmp = current.next;
+                    prev.next = tmp;
+                    current = tmp;
+                    break;
+                }
+                runner = runner.next;
+            }
+
+            // if the runner reaches the current
+            // update prev and current for next run
+            if (runner == current) {
+                prev = current;
+                current = current.next;
+            }
+        }
+    }
+
+    public void findNthToLastNodeIterative(int n) {
+
     }
 
     /**
@@ -121,10 +238,15 @@ public class SinglyLinkedList {
      * @return True if the value is in the linked list.
      */
     public Boolean isValuePresent(int value) {
-        if (this.isEmpty()) { // first check if the list is empty
-            return false; // return false if it is empty
+
+        // first check if the list is empty
+        // if it is empty the value can't be present
+        if (this.isEmpty()) {
+            return false;
         }
 
+        // start at the head
+        // traverse down the list until find the value
         SinglyLinkedListNode node = this.head;
 
         while (node.next != null) {
@@ -165,13 +287,13 @@ public class SinglyLinkedList {
      */
     public static void main(String[] args) {
 
-        SinglyLinkedListNode firstSinglyLinkedListNode = new SinglyLinkedListNode(4); // first create a node to start list
+        SinglyLinkedListNode firstSinglyLinkedListNode = new SinglyLinkedListNode(4);
 
         SinglyLinkedList myList = new SinglyLinkedList(firstSinglyLinkedListNode);
 
-        SinglyLinkedListNode secondSinglyLinkedListNode = new SinglyLinkedListNode(3); // create a second node to add to the list
+        SinglyLinkedListNode secondSinglyLinkedListNode = new SinglyLinkedListNode(3);
 
-        myList.addNodeToTail(secondSinglyLinkedListNode); // add the second node to the tail of this list
+        myList.addNodeToTail(secondSinglyLinkedListNode);
 
         SinglyLinkedListNode newHeadNode = new SinglyLinkedListNode(1);
 
@@ -184,16 +306,14 @@ public class SinglyLinkedList {
         System.out.println("Reversed List: " + myList.toString());
 
         System.out.println("Is four in the list? " + myList.isValuePresent(4));
-
         System.out.println("Is two in the list? " + myList.isValuePresent(2));
 
+        LinkedList<Integer> myNewList = new LinkedList<>();
 
-        LinkedList<Integer> myNewList = new LinkedList<>(); // create a linked list using the built in structure
-
-        myNewList.add(1); // add some values into the linked list
+        myNewList.add(1);
         myNewList.add(3);
         myNewList.add(4);
 
-        System.out.println(myNewList.toString()); // print the new linked list
+        System.out.println(myNewList.toString());
     }
 }

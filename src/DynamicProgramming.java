@@ -273,9 +273,9 @@ public class DynamicProgramming {
 
         System.out.println(DynamicProgramming.computeCoinCollectionWays(4, new int[]{1, 2, 3, 4}));
 
-        DynamicProgramming.getProductsOfAllIntsExceptAtIndex(new int[]{1, 7, 3, 4});
-        DynamicProgramming.getProductsOfAllIntsExceptAtIndexGreedy(new int[]{1, 7, 3, 4});
-        System.out.println(DynamicProgramming.getHighestProductOfThree(new int[]{-10, -10, 1, 3, 2}));
+//        DynamicProgramming.getProductsOfAllIntsExceptAtIndex(new int[]{1, 7, 3, 4});
+//        DynamicProgramming.getProductsOfAllIntsExceptAtIndexGreedy(new int[]{1, 7, 3, 4});
+//        System.out.println(DynamicProgramming.getHighestProductOfThree(new int[]{-10, -10, 1, 3, 2}));
 
     }
 }

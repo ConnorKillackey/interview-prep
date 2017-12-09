@@ -41,7 +41,8 @@ class GraphNode {
     }
 }
 
-
+// dijkstras shortest path
+// prims minimum spanning tree
 
 
 public class Graph {

@@ -6,6 +6,7 @@ Utilized the following for my preparation:
 
 - [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 - [Interview Cake](https://www.interviewcake.com)
+- [GeeksForGeeks](http://www.geeksforgeeks.org/)
 - [HackerRank](https://www.hackerrank.com/)
 - [CareerCup](https://www.careercup.com/)
 - [LeetCode](https://leetcode.com/)
@@ -15,43 +16,45 @@ Utilized the following for my preparation:
 ## Glossary
 
 - [General Concepts](#general-concepts)
-    - [Random Access Memory]()
-    - [Big O Notation]()
-    - [Binary Numbers and Bits]()
-    - [Recursion]()
-    - [Memory]()
-    - [Logarithms]()
-    - [Triangular Series]()
-    - [Object Oriented Programming]()
-    - [Functional Programming]()
-- [Data Structures]()
-    - [Arrays]()
-    - [Hash Tables]()
-    - [Linked Lists]()
-    - [Queues]()
-    - [Stacks]()
-    - [Tries]()
-    - [Trees]()
-- [Algorithms]()
-    - [Greedy]()
-    - [Divide and Conquer]()
-    - [Dynamic Programming]()
-- [Design Patterns]()
-    - [Singleton]()
-    - [Factory]()
-    - [Model View Controller]()
-- [Testing and QA]()
-- [Language Notes]()
-    - [Java]()
-    - [JavaScript]()
-- [Interview Tactics]()
-- [Contribute]()
+    - [Memory](#memory)
+    - [Big O Notation](#big-o-notation)
+    - [Binary Numbers and Bits](#binary-numbers-and-bits)
+    - [Recursion](#recursion)
+    - [Logarithms](#logarithms)
+    - [Triangular Series](#triangular-series)
+    - [Object Oriented Programming](#object-orientated-programming)
+    - [Functional Programming](#functional-programming)
+    - [Discrete Math](#discrete-math)
+- [Data Structures](#data-structures)
+    - [Arrays](#arrays)
+    - [Hash Tables](#hash-tables)
+    - [Linked Lists](#linked-lists)
+    - [Queues](#queues)
+    - [Stacks](#stacks)
+    - [Tries](#tries)
+    - [Trees](#trees)
+- [Algorithms](#algorithms)
+    - [Greedy](#greedy)
+    - [Divide and Conquer](#divide-and-conquer)
+    - [Dynamic Programming](#dynamic-programming)
+- [Design Patterns](#design-patterns)
+    - [Singleton](#singleton)
+    - [Factory](#factory)
+    - [Model View Controller](#model-view-controller)
+- [Testing and QA](#testing-and-quality-assurance)
+- [Language Notes](#language-notes)
+    - [Java](#java)
+    - [JavaScript](#javascript)
+- [Interview Tactics](#interview-tactics)
+- [Contribute](#contributing)
 
 ## General Concepts
 
 This section goes over some important concepts to understand before you dive into the thick of things. These concepts will really help you connect different ideas together and will be paramount to your understanding of why one approach is taken over another for certain problems.
 
-### Random Access Memory
+### Memory
+
+#### Random Access Memory
 
 I know this isn't a computer architecture focused article, however understanding how the programs we write execute internally is critical to your decision when selecting which data structure is suitable for the given scenario.
 
@@ -157,7 +160,6 @@ public Boolean isNeedleInHaystack(int[] haystack, int needle) {
     }
     return false;
 }
-
 ```
 
 My explanation of the function above would be something like: "The worst case time complexity of this algorithm is O(n), because we cannot assume where the needle is in the haystack. However, it is definitely possible that the runtime could be O(1) if the needle is the first item in the haystack, therefore O(1) is our best case."
@@ -232,6 +234,10 @@ total sum of a triangular series is n^2+n/2
 - abstraction, polymorphism, encapsulation, inheritance
 
 ### Functional Programming
+
+### Discrete Math
+
+
 
 ## Data Structures
 
@@ -485,6 +491,7 @@ closures
 primitives in javascript are pass by value
 javascript has prototypal inheritance
 javascript has freedom
+== vs ===
 
 class vs prototypal inheritance
 
