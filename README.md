@@ -19,19 +19,18 @@ Utilized the following for my preparation:
     - [Big O Notation]()
     - [Binary Numbers and Bits]()
     - [Recursion]()
+    - [Logarithms]()
+    - [Triangular Series]()
     - [Object Oriented Programming]()
     - [Functional Programming]()
 - [Data Structures]()
     - [Arrays]()
-    - [Hash Maps]()
+    - [Hash Tables]()
     - [Linked Lists]()
     - [Queues]()
     - [Stacks]()
     - [Tries]()
     - [Trees]()
-      - Binary Search Trees
-      - Heaps
-      - Graphs
 - [Algorithms]()
     - [Greedy]()
     - [Divide and Conquer]()
@@ -44,8 +43,8 @@ Utilized the following for my preparation:
 - [Language Notes]()
     - [Java]()
     - [JavaScript]()
-    - [Ruby]()
 - [Interview Tactics]()
+- [Contribute]()
 
 ## General Concepts
 
@@ -99,7 +98,6 @@ public void printAllPossibleOrderedPairs(int[] arrayOfItems) { // O(n*n) = O(n<s
         }
     }
 }
-
 ```
 
 In this example, for every input we iterate *n* times, therefore our time complexity must be O(n*n) or O(n<sup>2</sup>).
@@ -130,7 +128,7 @@ public void printThings(int[] array) {
         for (int secondItem : array) { // O(n)
             System.out.println(secondItem);
         }
-    } // O(n^2)
+    } // O(n<sup>2</sup>)
 
     int middleIndex = array.length/2;
     int index = 0;
@@ -151,7 +149,7 @@ In interviews it is important to express that you are saying the Big O of an alg
 
 ```
 public Boolean isNeedleInHaystack(int[] haystack, int needle) {
-    for (int item : haystack) {
+    for (int item : haystack) { // O(n)
         if (item == needle) {
             return true;
         }
@@ -167,7 +165,7 @@ So far, all we've talked about is time complexity. Time complexity is great if w
 
 When we talk about space complexity we are essentially look at the same thing as time complexity, but instead of looking at runtime we are looking at space (memory). So, space complexity boils down to how much space grows relative to the algorithm input, as the input becomes arbitrarily large. Another key aspect of space complexity is something called Auxiliary space, this is characterized as the extra space or temporary space used by an algorithm. Auxiliary space is not to be confused with space complexity, as space complexity analyzes the auxiliary space as well as the space used by the input.
 
-## Binary Numbers
+### Binary Numbers and Bits
 
 Binary Numbers
 - base 2 numbers (binary)
@@ -182,7 +180,14 @@ tradeoff is that there is a cap to the number it can hold
 
 twos complement
 
-## Logarithms
+### Recursion
+
+A function that returns itself, base case and recursive case.
+- recusion is prone to a stack overflow error, where our call stack is too big and runs out of space
+- some languages do tail call optimization to prevent the call stack from being very large, performs optimizstion on recursive algorithms, Java, Python dont allow, some C, Ruby and Javascript implementations do
+best to assume that our compiler or interpreter doesnt do this
+
+### Logarithms
 
 logarithms are essentially asking what power do we need to raise the base to in order to get the result
 what are they used for? good to solve for x when x is an exponent
@@ -201,7 +206,7 @@ height is number of times we have to double 1 to get n+1/2
 log2(n+1) for height, considering tree with 2 levels (3 nodes)
 the base can be implied to be 2
 
-## Triangular Series
+### Triangular Series
 
 a triangular series is a series of numbers where each number could be a row of an equilateral triangle
 
@@ -219,32 +224,13 @@ the value will always be 1 more then series' n
 
 total sum of a triangular series is n^2+n/2
 
-## Recursion
+### Object Orientated Programming
 
-A function that returns itself, base case and recursive case.
-- recusion is prone to a stack overflow error, where our call stack is too big and runs out of space
-- some languages do tail call optimization to prevent the call stack from being very large, performs optimizstion on recursive algorithms, Java, Python dont allow, some C, Ruby and Javascript implementations do
-best to assume that our compiler or interpreter doesnt do this
+- talk inheritance, composition, etc
+- solid principles
+- abstraction, polymorphism, encapsulation, inheritance
 
-## Dynamic Programming
-
-optimal substrcuture
-overlapping subproblems
-the unbounded napsack problem
-0/1 Knapsack
-
-## Memoization
-
-technique used to prevent overlapping subproblems, algorithms caches results and picks from there if already been computed
-usually results are stored inside of a hash map
-fibinocci is great example of this
-common startegy for dynamic programming problems, problems that are coposed of solutions to the same problem with smaller inputs
-another good strat, more common is going bottom up
-
-## Bottom Up (Tabulation)
-
-- a way to avoid recursion, as recursion has a memory cost because of the call stack it creates
-- typically start at the beginning, whereas recursion starts at end and works its way back
+### Functional Programming
 
 ## Data Structures
 
@@ -326,7 +312,7 @@ So with that knowledge, all a linked list does is store a list of items in a ord
 There are different types of linked lists as well, such as a doubly linked list, this is a list that allows you to easily traverse in two directions, up and down the list.
 circular linked list
 
-## Queues
+### Queues
 
 FIFO
 enqueue
@@ -334,7 +320,7 @@ dequeue
 peek
 isEmpty
 
-## Stacks
+### Stacks
 
 LIFO
 push
@@ -342,9 +328,9 @@ pop
 peek
 isEmpty
 
-## Trees
+### Trees
 
-### Binary Trees
+#### Binary Trees
 
 a tree where each node has at most two children (left and right)
 perfect trees are ones that are completely full
@@ -368,7 +354,7 @@ rotations
 #### Binary Heap
 
 
-## Graphs
+#### Graphs
 
 abstract data structure that consists of nodes (vertices) connected by edges
 
@@ -385,6 +371,26 @@ adjacency list each item in the lsit is a node, each node has a list of adjacent
 adjacency matrix 1's and 0's
 
 ## Algorithms
+
+approaching problems
+- examplify, write out example cases and try to find a general rule
+- pattern match, look at similar problems and see if you can modify the solution to develop an algorithm for the problem
+- simplify and generalize,
+- base case and build, solve for the base case and then generalize
+- data structure brainstorm, run through a list of data structures and try to apply each one
+
+
+### Techniques and Concepts
+
+- greedy
+- dynamic programming
+- divide and conquer
+
+### Sorting
+
+### Searching
+
+### Classic Problems
 
 Binary Search - to be used on a sorted list of numbers
 
@@ -421,7 +427,6 @@ advantages
 disadvantages
 -doesnt necessarily find the shortest path
 
-
 in place algorithms
 algorithms that modify its input, sometimes called destructive
 working inplace is a good way to save space
@@ -433,7 +438,6 @@ AVL trees
 B-Tress
 Red black tree
 
-
 greedy
 iterates through the problem space taking the best so far
 always makes the choice that seems the best in the moment
@@ -441,9 +445,19 @@ makes a locally-optimal choice in the hope that this choice will lead to a globa
 
 ## Design Patterns
 
-Singleton pattern
+- Singleton pattern
+- factory pattern
+- model view controller
+
+## Testing and Quality Assurance
+
+
 
 ## Language Notes
+
+## Java
+
+## JavaScript
 
 functions in javascript create new scopes
 javascript is loosely typed, unless using typescript
@@ -476,17 +490,12 @@ function prototypes
 using prototypal inheritance could be easier
 can achieve this with factory functions
 
-
 solve problems with Java
 but be prepared to solve with Javascript
 be very strong with JS trivia
 vectors are thread safe, array lists are not
 
-
-
 closure, a function that accesses a variable outside of itself, good to mimic private members in traditional oop
-
-Ruby is convention over configuration
 
 java uses short circuit evaluation
 java string literals get interned, stored in the string pool
@@ -502,11 +511,10 @@ String builder in java makes strings mutable
 
 react is a composition model
 
-
 ## Interview Tactics
 
 Tips and Tricks
-Metacognition -  do you think about coding well?
+Metacognition - do you think about coding well?
 Ownership - Do you see your work through, do I fix things that aren't quite right
 
 example of interesting technical problem solved
@@ -523,21 +531,6 @@ make feel collaborative "we"
 work at FB-size scale - smart co-workers -
 good physical location or weather or activities -
 high potential for career growth, doing high ownership and high impact work
-
-## Problems
-
-Egg Problem
-egg floors problem
-1. work you way up each floor until an egg breaks
-having two eggs allows us to skip floors
-how do we choose which floors to skip
-
-We want to skip as few floors as possible the first time we drop an egg, so if our first egg breaks right away we don't have a lot of floors to drop our second egg from.
-We always want to be able to reduce the number of floors we're skipping by one. We don't want to get towards the top and not be able to skip any floors any more.
-
-Shuffling Cards
-
-Rolling Dice
 
 ## Contributing
 
