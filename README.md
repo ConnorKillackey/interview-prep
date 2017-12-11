@@ -2,11 +2,12 @@
 
 This repository includes a bunch of code that I have written in Java to implement various different data structures, algorithms and solutions to online problems. I am using this readme to act as a running guide of everything I have implemented and as a place for me to jot notes down on various pertinent things. I hope that if you stumble across this that it can help you understand a difficult concept that I gone through, I like to make simple analogy's between a concept and things in the real world as it helps me conceptualize it better so if you also benefit from that kind of thing this will likely help you.  
 
-Utilized the following for my preparation:
+I utilize the following for my preparation:
 
 - [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 - [Interview Cake](https://www.interviewcake.com)
 - [GeeksForGeeks](http://www.geeksforgeeks.org/)
+- [StackOverflow](https://stackoverflow.com/)
 - [HackerRank](https://www.hackerrank.com/)
 - [CareerCup](https://www.careercup.com/)
 - [LeetCode](https://leetcode.com/)
@@ -42,6 +43,7 @@ Utilized the following for my preparation:
     - [Factory](#factory)
     - [Model View Controller](#model-view-controller)
 - [Testing and QA](#testing-and-quality-assurance)
+- [Web Development](#web-development)
 - [Language Notes](#language-notes)
     - [Java](#java)
     - [JavaScript](#javascript)
@@ -54,15 +56,32 @@ This section goes over some important concepts to understand before you dive int
 
 ### Memory
 
-#### Random Access Memory
+I know this isn't a computer architecture focused article, however understanding how the programs we write execute internally is critical to lots of decisions you'll want to make when selecting the optimal solution for a problem. Also, having this lower level knowledge sets you apart from other candidates as it really shows your depth of knowledge.
 
-I know this isn't a computer architecture focused article, however understanding how the programs we write execute internally is critical to your decision when selecting which data structure is suitable for the given scenario.
+#### Random Access Memory
 
 One key aspect that lives within your computer is *Random Access Memory*, also called *RAM*. RAM is a special type of storage a computer has that is fast and volatile (prone to changing and unpredictable). It is responsible for storing currently executing program data, so things like the variables you declare in your code etc. (note it does not store things like files, such as audio files etc. those go in non-volatile storage likely on the disk or in maim memory). For simplicity's sake, you can think of RAM to be a big bookshelf, and each shelf has a unique address and holds exactly one byte (one byte is 8 bits, fun fact, half a byte is a nibble :joy:). The really cool thing, and probably the most important thing to know, is that the processor communicates with RAM through a memory interface, this allows the processor to read and write data to RAM.
 
 The memory interface is where all of the magic happens, it has a direct connection to every shelf in the bookshelf, this is what makes RAM so fast. Because of the direct connection, we don't have to traverse the entire bookshelf, it can just go to the shelf that it is connected to directly, this is why in later sections you'll see that array access time complexity is O(1). This property of RAM is a large reason why it's called RAM, it can access a random memory address right away, no need for searching, a hard drive for example has to spin the disk to find the address it wants to save, this is slow.
 
 There is also *one more thing* that the processor does proactively that's important to know, and its that the processor has its own super fast cache that it uses to store recently accessed items, this way it can grab things from its own cache without going out to RAM to get it, so this is even faster than RAM. Because of this cache the processor has, the processor can do some fancy things, such as when it reads from RAM it can grab the contents of the addresses in RAM that are nearby the one it intends to get. This is good because it assumes that data stored close together are related in some way and there is a chance that the nearby data may also have to be accessed soon, so proactively putting it in its cache is a good idea, this is why *storing data in sequential memory addresses* is faster.
+
+RAM also is the home for both the stack and heap, read below for more details on those.
+
+#### Stack
+
+for static memory allocation, local variables
+threads have their own stack
+variables automatically deallocate on stack
+call stack and method arguments
+can be space capped, stack overflow error
+
+#### Heap
+
+dynamic memor allocation
+shared among threads
+heap has to manually deallocate, java as garbage collection
+can use without knowing the amount of memory we need
 
 ### Big O Notation
 
@@ -367,6 +386,8 @@ a tree with cycles
 implement with adjacency matrix
 array of pairs
 
+size of graph is number of edges
+order of a graph is number of nodes
 
 abstract data structure that consists of nodes (vertices) connected by edges
 
@@ -476,6 +497,21 @@ risk based testing
 combinatorial testing - finding pairs to test
 decision tables
 
+## Web Development
+
+OSI model
+layered network Model (TCP/IP)
+- physical layer (electrical signals)
+- link layer
+- network layer (IP)
+- TLS/SSL if needed
+- transport layer (ports) (UDP is less reliable but less overhead than TCP)
+- application layer protocols (http)
+
+- protocols, ip is literally just for getting one thing to destination, doesnt care about what it is, doesnt even care if it was delivered, but makes best attemp
+tcp is the transport layer, makes sure they arrived, retransmit if not, and reorders packets if lost, but still doenst care about the data, (UDP is another at this level)
+http is application layer, used by the browswers (smtp and imap are used by email clients), only cares about the data being transferred
+- proxies
 
 ## Language Notes
 

@@ -1,52 +1,61 @@
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
-class GraphNode {
+class GraphVertex {
+    final private String id;
+    final private String name;
 
-    private String label;
-    private Set<GraphNode> neighbors;
-    private Optional<String> color;
 
-    public GraphNode(String label) {
-        this.label = label;
-        neighbors = new HashSet<GraphNode>();
-        color = Optional.empty();
+    public Vertex(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    public String getId() {
+        return id;
     }
 
-    public String getLabel() {
-        return label;
-    }
-
-    public Set<GraphNode> getNeighbors() {
-        return Collections.unmodifiableSet(neighbors);
-    }
-
-    public void addNeighbor(GraphNode neighbor) {
-        neighbors.add(neighbor);
-    }
-
-    public boolean hasColor() {
-        return color.isPresent();
-    }
-
-    public String getColor() {
-        return color.get();
-    }
-
-    public void setColor(String color) {
-        this.color = Optional.ofNullable(color);
+    public String getName() {
+        return name;
     }
 }
 
-// dijkstras shortest path
-// prims minimum spanning tree
+class GraphEdge {
+    private final GraphVertex source;
+    private final GraphVertex destination;
+    private final int weight;
 
+    public GraphEdge(int weight, GraphVertex source, GraphVertex destination) {
+        this.weight = weight;
+        this.source = source;
+        this.destination = destination;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public GraphVertex getDestination() {
+        return destination;
+    }
+
+    public GraphVertex getSource() {
+        return source;
+    }
+}
 
 public class Graph {
+    private final List<GraphVertex> vertices;
+    private final List<GraphEdge> edges;
 
+    public Graph(List<GraphVertex> vertices, List<GraphEdge> edges) {
+        this.vertices = vertices;
+        this.edges = edges;
+    }
 
+    public List<GraphVertex> getVertices() {
+        return vertices;
+    }
 
+    public List<GraphEdge> getEdges() {
+        return edges;
+    }
 }
