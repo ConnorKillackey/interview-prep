@@ -52,7 +52,7 @@ I utilize the following for my preparation:
 
 ## General Concepts
 
-This section goes over some important concepts to understand before you dive into the thick of things. These concepts will really help you connect different ideas together and will be paramount to your understanding of why one approach is taken over another for certain problems.
+This section goes over some important concepts to understand before you dive into the thick of things. These concepts will really help you connect different ideas together and will be paramount to your understanding of why one approach is taken over another for certain problems. gitr
 
 ### Memory
 
