@@ -166,7 +166,7 @@ public class BinaryTree {
 
     /**
      * Recursively traverses the binary tree in post order.
-     * Leverages call stack to acheive traversal.
+     * Leverages call stack to achieve traversal.
      * @param node The reference node for traversal.
      */
     public void postorderRecursive(BinaryTreeNode node) {
@@ -269,9 +269,7 @@ public class BinaryTree {
         while(!nodes.isEmpty()) {
 
             // dequeue the current node
-            BinaryTreeNode currentNode = nodes.peek();
-            //
-            nodes.remove();
+            BinaryTreeNode currentNode = nodes.poll();
 
             if (currentNode.left == null) {
                 currentNode.left = new BinaryTreeNode(value);
@@ -295,49 +293,49 @@ public class BinaryTree {
      */
     public Boolean isSuperBalanced(BinaryTreeNode rootNode) {
 
-//        // an empty tree is super balanced
-//        if (rootNode == null) {
-//            return true;
-//        }
-//
-//        // contains a list of depths
-//        // if there are more than two depths it is not balanced
-//        // if there are two depths that are greater than 1 apart
-//        List<Integer> depths = new ArrayList<>();
-//
-//        // holds a list of nodes during search
-//        // depth first uses a stack, breath uses a queue
-//        Stack<NodeDepthPair> nodes = new Stack<>();
-//        nodes.push(new NodeDepthPair(0, rootNode));
-//
-//        // begin traversal
-//        while(!nodes.isEmpty()) {
-//
-//            NodeDepthPair nodeDepthPair = nodes.pop();
-//            BinaryTreeNode node = nodeDepthPair.node;
-//            int depth = nodeDepthPair.depth;
-//
-//            // case that is a leaf node
-//            if (node.left != null && node.right != null) {
-//
-//                if (!depths.contains(depth)) {
-//                    depths.add(depth);
-//
-//                    if ((depths.size() > 2) || (depths.size() == 2 && Math.abs(depths.get(0) - depths.get(1)) > 1)) {
-//                        return false;
-//                    }
-//                }
-//
-//            } else {
-//                if (node.left != null) {
-//                    nodes.push(new NodeDepthPair(depth + 1, node.left));
-//                }
-//                if (node.right != null) {
-//                    nodes.push(new NodeDepthPair(depth + 1, node.right));
-//                }
-//            }
-//        }
-//
+        // an empty tree is super balanced
+        if (rootNode == null) {
+            return true;
+        }
+
+        // contains a list of depths
+        // if there are more than two depths it is not balanced
+        // if there are two depths that are greater than 1 apart
+        List<Integer> depths = new ArrayList<>();
+
+        // holds a list of nodes during search
+        // depth first uses a stack, breath uses a queue
+        Stack<BinaryTreeNodeDepthPair> nodes = new Stack<>();
+        nodes.push(new BinaryTreeNodeDepthPair(rootNode, 0));
+
+        // begin traversal
+        while(!nodes.isEmpty()) {
+
+            BinaryTreeNodeDepthPair nodeDepthPair = nodes.pop();
+            BinaryTreeNode node = nodeDepthPair.node;
+            int depth = nodeDepthPair.depth;
+
+            // case that is a leaf node
+            if (node.left != null && node.right != null) {
+
+                if (!depths.contains(depth)) {
+                    depths.add(depth);
+
+                    if ((depths.size() > 2) || (depths.size() == 2 && Math.abs(depths.get(0) - depths.get(1)) > 1)) {
+                        return false;
+                    }
+                }
+
+            } else {
+                if (node.left != null) {
+                    nodes.push(new BinaryTreeNodeDepthPair(node.left, depth+1));
+                }
+                if (node.right != null) {
+                    nodes.push(new BinaryTreeNodeDepthPair(node.right, depth + 1));
+                }
+            }
+        }
+
      return true;
     }
 
@@ -378,6 +376,22 @@ public class BinaryTree {
         }
 
         return true;
+    }
+
+    boolean checkBST(Node root) {
+        return check(root, Integer.MAX_VALUE, Integer.MIN_VALUE);
+    }
+
+    boolean check(Node root, int upperBound, int lowerBound) {
+        if (root == null) {
+            return true;
+        }
+
+        if (root.data >= upperBound || root.data <= lowerBound) {
+            return false;
+        }
+
+        return check(root.left, root.data, lowerBound) && check(root.right, upperBound, root.data);
     }
 
 }

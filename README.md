@@ -187,6 +187,12 @@ So far, all we've talked about is time complexity. Time complexity is great if w
 
 When we talk about space complexity we are essentially look at the same thing as time complexity, but instead of looking at runtime we are looking at space (memory). So, space complexity boils down to how much space grows relative to the algorithm input, as the input becomes arbitrarily large. Another key aspect of space complexity is something called Auxiliary space, this is characterized as the extra space or temporary space used by an algorithm. Auxiliary space is not to be confused with space complexity, as space complexity analyzes the auxiliary space as well as the space used by the input.
 
+Think about pigeon concept
+variables matter, farmland example
+different steps get added
+different inputs are different variables
+drop non dominate terms
+
 ### Binary Numbers and Bits
 
 Binary Numbers
@@ -379,6 +385,7 @@ rotations
 
 #### Binary Heap
 
+comparators
 
 #### Graphs
 need to finish this!
@@ -404,6 +411,14 @@ adjacency list each item in the lsit is a node, each node has a list of adjacent
 adjacency matrix 1's and 0's
 
 ## Algorithms
+
+1. listen
+2. example (big example, no special cases)
+3. brute force
+4. optimize
+5. walk through your algorithm
+6. Start Coding
+7. Test
 
 approaching problems
 - examplify, write out example cases and try to find a general rule

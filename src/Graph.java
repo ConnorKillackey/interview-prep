@@ -5,7 +5,7 @@ class GraphVertex {
     final private String name;
 
 
-    public Vertex(String id, String name) {
+    public GraphVertex(String id, String name) {
         this.id = id;
         this.name = name;
     }

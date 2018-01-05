@@ -115,6 +115,32 @@ public class SinglyLinkedList {
         this.head.next = node;
     }
 
+    Node InsertNth(Node head, int data, int position) {
+
+        Node newNode = new Node();
+        newNode.data = data;
+        newNode.next = head;
+
+        if (head == null || position == 0) {
+            return newNode;
+        }
+
+        Node current = head;
+        int currentPosition = 0;
+        while(currentPosition != position-1) {
+            current = current.next;
+            currentPosition++;
+        }
+
+        Node temp = current.next;
+        current.next = newNode;
+        newNode.next = temp;
+
+        return head;
+    }
+
+
+
     /**
      * Deletes a node in a linked list, only using the reference to the node to delete.
      * @param nodeToDelete The node to delete.
@@ -133,6 +159,27 @@ public class SinglyLinkedList {
         nodeToDelete.value = nextNode.value;
         nodeToDelete.next = nextNode.next;
     }
+
+    Node Delete(Node head, int position) {
+
+        if (position == 0) {
+            head = head.next;
+            return head;
+        }
+
+        Node current = head;
+        int currentPosition = 0;
+
+        while(currentPosition != position-1) {
+            current = current.next;
+            currentPosition++;
+        }
+
+        current.next = current.next.next;
+
+        return head;
+    }
+
 
     /**
      * Removes duplicates from a linkedlist, this method uses a buffer to keep track of values.

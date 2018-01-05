@@ -5,7 +5,26 @@
  */
 public class Searching {
 
+    public static Boolean binarySearchRecursive(int[] array, int target) {
+        return true;
+    };
+
+
+    public static Boolean binarySearchIterative(int[] array, int target) {
+        return true;
+    }
+
     /**
+     * Ice cream parlor problem.
+     * @param menu
+     * @param money
+     * @return
+     */
+    public static int[] findChoices(int[] menu, int money) {
+        return new int[]{ 1, 2 };
+    }
+
+     /**
      * Implementation of the binary search algorithm.
      * Good for ordered pair of numbers, continually half's array.
      * @param numbers The numbers to search within.

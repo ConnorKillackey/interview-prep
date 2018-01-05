@@ -8,6 +8,35 @@ import java.util.HashMap;
  */
 public class Strings {
 
+    ///////////////////////////
+    /* PARENTHESIS MATCHING */
+    /////////////////////////
+
+    /**
+     * Finds the matching closing parenthesis given the position of the openting parenthesis.
+     * @param expression The expression to be checked for matching parenthesis.
+     * @param position The position (index) of the opening parenthesis.
+     * @return The position of the closing parenthesis.
+     */
+    public static int findMatchingParens(String expression, int position) {
+        return 1;
+    }
+
+    //////////////////////
+    /* STRING BALANCED */
+    /////////////////////
+
+    /**
+     * Checks if a string expression has balanced brackets.
+     * Implemented using a stack to keep track of active brackets.
+     * @param expression The expression to check.
+     * @return True if balanced and false otherwise.
+     */
+    public static boolean isBracketBalanced(String expression) {
+        // write this one
+        return true;
+    }
+
     /////////////////////////
     /* PALINDROME CHECKER */
     ///////////////////////
@@ -15,7 +44,7 @@ public class Strings {
     /**
      * Checks if a string is a palindrome or not.
      * @param checkString The string to check.
-     * @return True if is a palindrome, flase otherwise.
+     * @return True if is a palindrome, false otherwise.
      */
     public static boolean isPalindrome(String checkString) {
         for (int i = 0; i < checkString.length() - 1; i++) {
@@ -119,6 +148,7 @@ public class Strings {
     /**
      * Checks if two strings are anagrams.
      * Implementation with sorting arrays and comparing.
+     * Note anagrams are strings that have all the same characters.
      * @param string1 First string to compare with.
      * @param string2 Second string to compare with.
      * @return True if anagrams, otherwise false;
