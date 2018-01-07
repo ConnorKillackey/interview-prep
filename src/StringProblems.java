@@ -1,19 +1,101 @@
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * Various implementations of string manipulation questions.
  * Also includes useful string comparison algorithms.
  * Author: Robert Saunders
  */
-public class Strings {
+public class StringProblems {
 
-    static String timeConversion(String s) {
-        String[] units = s.split(":");
+    ///////////////////////////////////////////
+    /* PERMUTATIONS OF STRING IS PALINDROME */
+    /////////////////////////////////////////
+
+    /**
+     * Returns true if any permutation of a string is a palindrome.
+     * Note: Key take away here is that palindrome only has 0 or 1 unpaired characters.
+     * @param inputString The input string to check.
+     * @return True if a permutation is a palindrome.
+     */
+    public static boolean anyPermutationAPalindrome(String inputString) {
+
+        HashSet<Character> unpairedChars = new HashSet<>();
+
+        for(char current : inputString.toCharArray()) {
+            if (unpairedChars.contains(current)) {
+                unpairedChars.remove(current);
+            } else {
+                unpairedChars.add(current);
+            }
+        }
+
+        return unpairedChars.size() <= 1;
+    }
+
+    /////////////////////////////
+    /* REVERSE WORDS IN-PLACE */
+    ///////////////////////////
+
+    /**
+     * Reverses a group of words (sentence) separated by spaces.
+     * @param inputString The string of words to be reversed.
+     * @return The reversed group of words.
+     */
+    public static String reverseWordsInPlace(String inputString) {
+
+        // reverse all the characters in entire sentence, this gives us the correct word order
+        // then reverse the characters in each individual word
+
+    }
+
+    //////////////////////////////
+    /* REVERSE STRING IN-PLACE */
+    ////////////////////////////
+
+    /**
+     * Reverses a string in-place and returns the reversed string.
+     * Note: Strings are immutable in Java so I create a char array.
+     * @param inputString The string to reverse.
+     * @return The reversed string.
+     */
+    public static String reverseStringInPlace(String inputString) {
+
+        char[] charsInString = inputString.toCharArray();
+
+        int startIndex = 0;
+        int endIndex = charsInString.length;
+
+        while(startIndex < endIndex) {
+
+            char tmp = charsInString[startIndex];
+            charsInString[startIndex] = charsInString[endIndex];
+            charsInString[endIndex] = tmp;
+
+            startIndex++;
+            endIndex--;
+        }
+
+        return new String(charsInString);
+    }
+
+    //////////////////////
+    /* TIME CONVERSION */
+    ////////////////////
+
+    /**
+     * Converts 12 hour time to 24 hour time.
+     * Good practice for messing with strings.
+     * @param s The twelve hour time to be converted to 24 hour time.
+     * @return The twenty four hour time after conversion.
+     */
+    public static String timeConversion(String s) {
+        java.lang.String[] units = s.split(":");
         int hours = Integer.parseInt(units[0]);
         int minutes = Integer.parseInt(units[1]);
         int seconds = Integer.parseInt(units[2].substring(0,2));
-        String AMPM = units[2].substring(2,4);
+        java.lang.String AMPM = units[2].substring(2,4);
 
         if (AMPM.equals("PM") && hours < 12) {
             hours += 12;
@@ -21,8 +103,7 @@ public class Strings {
             hours = 0;
         }
 
-        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
-
+        return java.lang.String.format("%02d:%02d:%02d", hours, minutes, seconds);
     }
 
     ///////////////////////////
@@ -30,28 +111,13 @@ public class Strings {
     /////////////////////////
 
     /**
-     * Finds the matching closing parenthesis given the position of the openting parenthesis.
+     * Finds the matching closing parenthesis given the position of the opening parenthesis.
      * @param expression The expression to be checked for matching parenthesis.
      * @param position The position (index) of the opening parenthesis.
      * @return The position of the closing parenthesis.
      */
-    public static int findMatchingParens(String expression, int position) {
+    public static int findMatchingParens(java.lang.String expression, int position) {
         return 1;
-    }
-
-    //////////////////////
-    /* STRING BALANCED */
-    /////////////////////
-
-    /**
-     * Checks if a string expression has balanced brackets.
-     * Implemented using a stack to keep track of active brackets.
-     * @param expression The expression to check.
-     * @return True if balanced and false otherwise.
-     */
-    public static boolean isBracketBalanced(String expression) {
-        // write this one
-        return true;
     }
 
     /////////////////////////
@@ -63,7 +129,7 @@ public class Strings {
      * @param checkString The string to check.
      * @return True if is a palindrome, false otherwise.
      */
-    public static boolean isPalindrome(String checkString) {
+    public static boolean isPalindrome(java.lang.String checkString) {
         for (int i = 0; i < checkString.length() - 1; i++) {
             int difference = checkString.length() - (i+1);
             if ((difference > 1) && (checkString.charAt(i) != checkString.charAt(difference))) {
@@ -85,7 +151,7 @@ public class Strings {
      * @param stringToCheck The string to check.
      * @return True if the string has all unique characters.
      */
-    public boolean isUniqueCharacters(String stringToCheck) {
+    public boolean isUniqueCharacters(java.lang.String stringToCheck) {
         // assuming string has only ASCII characters
         // create array of booleans
         boolean[] values = new boolean[256];
@@ -114,7 +180,7 @@ public class Strings {
      * @param checkChar The char to check occurs.
      * @return The number of times the character appears.
      */
-    public static int countNumTimesCharOccursInString(String stringToCheck, char checkChar) {
+    public static int countNumTimesCharOccursInString(java.lang.String stringToCheck, char checkChar) {
 
         // convert the string into a character array
         // initialize a hash map to keep count of characters
@@ -142,7 +208,7 @@ public class Strings {
      * @param checkChar The character to check.
      * @return The count of times the character occurred in word.
      */
-    public static int countCharOccurence(String stringToCheck, char checkChar) {
+    public static int countCharOccurence(java.lang.String stringToCheck, char checkChar) {
         //create a counter
         int counter = 0;
 
@@ -170,7 +236,7 @@ public class Strings {
      * @param string2 Second string to compare with.
      * @return True if anagrams, otherwise false;
      */
-    public static Boolean isAnagramArraySort(String string1, String string2) {
+    public static Boolean isAnagramArraySort(java.lang.String string1, java.lang.String string2) {
 
         // first check if the strings match in length
         if (string1.length() != string2.length()) {
@@ -194,7 +260,7 @@ public class Strings {
      * @param string2 Second string to compare with.
      * @return True if anagrams, otherwise false.
      */
-    public static Boolean isAnagramCounter(String string1, String string2) {
+    public static Boolean isAnagramCounter(java.lang.String string1, java.lang.String string2) {
 
         // first check if the strings match in length
         if (string1.length() != string1.length()) {
@@ -231,9 +297,10 @@ public class Strings {
      * Main execution method to test implementation.
      * @param args Arguments passed into the execution.
      */
-    public static void main(String[] args) {
-        System.out.println(Strings.countNumTimesCharOccursInString("Hello", 'j'));
-        System.out.println(Strings.countCharOccurence("Hello", 'e'));
-        System.out.println(Strings.isPalindrome("racecar"));
+    public static void main(java.lang.String[] args) {
+        System.out.println(StringProblems.countNumTimesCharOccursInString("Hello", 'j'));
+        System.out.println(StringProblems.countCharOccurence("Hello", 'e'));
+        System.out.println(StringProblems.isPalindrome("racecar"));
+        System.out.println(StringProblems.reverseStringInPlace("bobby"));
     }
 }

@@ -1,6 +1,3 @@
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import org.apache.batik.dom.util.HashTable;
-
 import java.util.HashMap;
 import java.util.LinkedList;
 
@@ -364,7 +361,7 @@ public class SinglyLinkedList {
      * @return The string representation of a linked list.
      */
     @Override
-    public String toString() {
+    public StringProblems toString() {
         StringBuilder linkedListString = new StringBuilder();
 
         SinglyLinkedListNode node = this.head;
@@ -385,7 +382,7 @@ public class SinglyLinkedList {
      * Main execution method for testing.
      * @param args Arguments passed into testing.
      */
-    public static void main(String[] args) {
+    public static void main(StringProblems[] args) {
 
         SinglyLinkedListNode firstSinglyLinkedListNode = new SinglyLinkedListNode(4);
 

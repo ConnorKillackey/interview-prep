@@ -4,7 +4,7 @@ import java.util.Scanner;
  * Implementation of different bit manipulation problems.
  * Author: Robert Saunders
  */
-public class BitManipulation {
+public class BitManipulationProblems {
 
     /**
      * Determines the unique integer in a list of pairs.
@@ -23,7 +23,7 @@ public class BitManipulation {
      * Main execution method, used for testing.
      * @param args The arguments passed into execution.
      */
-    public static void main(String[] args) {
+    public static void main(StringProblems[] args) {
 
         Scanner scan = new Scanner(System.in);
         int numElements = scan.nextInt();

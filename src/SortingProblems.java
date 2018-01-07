@@ -3,7 +3,7 @@
  * Important to know the pros and cons of each.
  * Author: Robert Saunders
  */
-public class Sorting {
+public class SortingProblems {
 
     static int[] closestNumbers(int[] arr) {
         Arrays.sort(arr);
@@ -128,7 +128,7 @@ public class Sorting {
      * Execution method used for testing.
      * @param args Arguments passed in for execution.
      */
-    public static void main(String args[]) {
+    public static void main(StringProblems args[]) {
 
     }
 }

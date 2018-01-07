@@ -3,7 +3,7 @@
  * Important to know the pros can cons of each.
  * Author: Robert Saunders
  */
-public class Searching {
+public class SearchingProblems {
 
     public static Boolean binarySearchRecursive(int[] array, int target) {
         return true;
@@ -48,7 +48,7 @@ public class Searching {
         return null;
     }
 
-    public static void main(String[] args) {
+    public static void main(StringProblems[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();
         for(int a0 = 0; a0 < t; a0++){
@@ -118,8 +118,8 @@ public class Searching {
      * Main execution method used for testing problems.
      * @param args Arguments passed into execution.
      */
-    public static void main(String[] args) {
-        System.out.println("Using binary search to find 0 in {1,2,3,4}: " + Searching.binarySearch(new int[]{1, 2, 3, 4}, 0)); // output should be false
-        System.out.println("Using binary search to find 2 in {1,2,3,4}: " + Searching.binarySearch(new int[]{1,2,3,4}, 2)); // output should be true
+    public static void main(StringProblems[] args) {
+        System.out.println("Using binary search to find 0 in {1,2,3,4}: " + SearchingProblems.binarySearch(new int[]{1, 2, 3, 4}, 0)); // output should be false
+        System.out.println("Using binary search to find 2 in {1,2,3,4}: " + SearchingProblems.binarySearch(new int[]{1,2,3,4}, 2)); // output should be true
     }
 }

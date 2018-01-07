@@ -5,7 +5,7 @@ import java.util.*;
  * Note: In java you can use PriorityQueue to achieve the same thing.
  * Author: Robert Saunders
  */
-public class Heap {
+public class HeapProblems {
 
     // two heaps, one is a min heap and the other is a max heap
     // characteristics of a heap is that we always add a new node to the first available position (left most position), then we can heapify up
@@ -27,7 +27,7 @@ public class Heap {
     // right child is 2n+2
 
     // parent node is (n-1)/2
-
+/*
     int[] heap;
     int capacity;
 
@@ -106,7 +106,7 @@ class HeapProblems {
         return medians;
     }
 
-    public static void main(String[] args) {
+    public static void main(Strings[] args) {
 
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
@@ -121,4 +121,5 @@ class HeapProblems {
             System.out.println(median);
         }
     }
+    */
 }

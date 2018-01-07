@@ -1,7 +1,7 @@
 /**
  * Created by robertsaunders on 2018-01-06.
  */
-public class Array {
+public class ArrayProblems {
 
     // window sliding problem, largest sum of n consecutive numbers
 

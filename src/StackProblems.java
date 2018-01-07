@@ -2,9 +2,10 @@
  * Implementation of a stack using an array.
  * Author: Robert Saunders
  */
-public class StackArray {
+public class StackProblems {
 }
-
+// bracket validator
+/*
     public static char[][] tokens = new char[][]{{ '(', ')'}, { '{', '}'}, { '[', ']'}};
 
     private static boolean isOpener(char bracket) {
@@ -25,7 +26,7 @@ public class StackArray {
         return false;
     }
 
-    public static boolean isBalanced(String expression) {
+    public static boolean isBalanced(Strings expression) {
         Stack<Character> active = new Stack<Character>();
         char[] chars = expression.toCharArray();
 
@@ -42,11 +43,12 @@ public class StackArray {
         return active.empty();
     }
 
-    public static void main(String[] args) {
+    public static void main(Strings[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();
         for (int a0 = 0; a0 < t; a0++) {
-            String expression = in.next();
+            Strings expression = in.next();
             System.out.println( (isBalanced(expression)) ? "YES" : "NO" );
         }
     }
+*/

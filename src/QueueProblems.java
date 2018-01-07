@@ -3,7 +3,7 @@
  * Good for when you know the capacity of queue.
  * Author: Robert Saunders
  */
-public class QueueArray {
+public class QueueProblems {
 
     private int capacity;
     private int[] queue;
@@ -14,7 +14,7 @@ public class QueueArray {
      * Basic constructor for the queue.
      * @param capacity The capacity of the queue.
      */
-    QueueArray(int capacity) {
+    QueueProblems(int capacity) {
         this.capacity = capacity;
         this.queue = new int[this.capacity];
     }
@@ -117,10 +117,10 @@ public class QueueArray {
      * Main execution method used for testing problems.
      * @param args Arguments passed into execution.
      */
-    public static void main(String[] args) {
+    public static void main(StringProblems[] args) {
 
         // create a queue
-        QueueArray myQueue = new QueueArray(4);
+        QueueProblems myQueue = new QueueProblems(4);
 
         // add some elements into the queue
         myQueue.enqueue(1);
@@ -145,7 +145,7 @@ public class QueueArray {
     }
 }
 
-
+/*
 class MyQueue<T> {
 
     private Stack<T> newestItemsOnTop = new Stack<>();
@@ -176,7 +176,7 @@ class MyQueue<T> {
 
 public class Solution {
 
-    public static void main(String[] args) {
+    public static void main(Strings[] args) {
 
         // create a new queue using my implementation
         MyQueue<Integer> queue = new MyQueue<>();
@@ -195,14 +195,14 @@ public class Solution {
         // read all queries the user makes
         for (int i = 0; i < numQueries; i++) {
 
-            String line;
+            Strings line;
             try {
                 line = reader.readLine();
             } catch (IOException e) {
                 return;
             }
 
-            String[] values = line.split("\\s+");
+            Strings[] values = line.split("\\s+");
 
             int choice = Integer.parseInt(values[0]);
 
@@ -219,3 +219,4 @@ public class Solution {
         }
     }
 }
+*/

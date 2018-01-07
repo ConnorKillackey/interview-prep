@@ -1,19 +1,19 @@
 import java.util.*;
 
 class GraphVertex {
-    final private String id;
-    final private String name;
+    final private StringProblems id;
+    final private StringProblems name;
 
 
-    public GraphVertex(String id, String name) {
+    public GraphVertex(StringProblems id, StringProblems name) {
         this.id = id;
         this.name = name;
     }
-    public String getId() {
+    public StringProblems getId() {
         return id;
     }
 
-    public String getName() {
+    public StringProblems getName() {
         return name;
     }
 }

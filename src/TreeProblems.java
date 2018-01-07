@@ -57,8 +57,7 @@ public class BinaryTree {
 
     //print level by level
     // queue indicates number of nodes at level
-
-
+    // Find the k-th smallest element in a BST
 
     /**
      * Recursively traverses a binary tree inorder.
@@ -88,7 +87,7 @@ public class BinaryTree {
         }
 
         // create a stack to use for traversal
-        Stack<BinaryTreeNode> nodes = new Stack<>();
+        StackProblems<BinaryTreeNode> nodes = new StackProblems<>();
         // initialize the current node to be root node
         BinaryTreeNode currentNode = rootNode;
 
@@ -148,7 +147,7 @@ public class BinaryTree {
         }
 
         // create a stack for the nodes
-        Stack<BinaryTreeNode> nodes = new Stack<>();
+        StackProblems<BinaryTreeNode> nodes = new StackProblems<>();
         // push the root onto the stack
         nodes.push(rootNode);
 
@@ -198,7 +197,7 @@ public class BinaryTree {
         }
 
         //
-        Stack<BinaryTreeNode> nodes = new Stack<>();
+        StackProblems<BinaryTreeNode> nodes = new StackProblems<>();
 
         BinaryTreeNode currentNode = nodes.pop();
 
@@ -233,7 +232,7 @@ public class BinaryTree {
             throw new IllegalArgumentException("The tree must have something in it!");
         }
 
-        Queue<BinaryTreeNode> nodes = new LinkedList<>();
+        QueueProblems<BinaryTreeNode> nodes = new LinkedList<>();
 
         nodes.add(rootNode);
 
@@ -266,7 +265,7 @@ public class BinaryTree {
         }
 
         // create a queue for level order traversal
-        Queue<BinaryTreeNode> nodes = new LinkedList<>();
+        QueueProblems<BinaryTreeNode> nodes = new LinkedList<>();
         // lets start our traversal at the beginning of the tree
         nodes.add(rootNode);
 
@@ -289,6 +288,8 @@ public class BinaryTree {
             }
         }
     }
+    /*
+
 
     static Node Insert(Node root, int value) {
 
@@ -342,7 +343,7 @@ public class BinaryTree {
         return root;
     }
 
-
+     */
     /**
      * Checks if a binary tree is super balanced.
      * Super balanced is when a trees depth never differs by more than one.
@@ -363,7 +364,7 @@ public class BinaryTree {
 
         // holds a list of nodes during search
         // depth first uses a stack, breath uses a queue
-        Stack<BinaryTreeNodeDepthPair> nodes = new Stack<>();
+        StackProblems<BinaryTreeNodeDepthPair> nodes = new StackProblems<>();
         nodes.push(new BinaryTreeNodeDepthPair(rootNode, 0));
 
         // begin traversal
@@ -409,7 +410,7 @@ public class BinaryTree {
             return true;
         }
 
-        Stack<NodeBounds> nodes = new Stack<>();
+        StackProblems<NodeBounds> nodes = new StackProblems<>();
         nodes.push(new NodeBounds(rootNode, Integer.MAX_VALUE, Integer.MIN_VALUE));
 
         while(!nodes.empty()) {
@@ -436,6 +437,7 @@ public class BinaryTree {
         return true;
     }
 
+    /*
     boolean checkBST(Node root) {
         return check(root, Integer.MAX_VALUE, Integer.MIN_VALUE);
     }
@@ -467,10 +469,6 @@ public class BinaryTree {
         }
 
         return root;
-    }
-
-   // Find the k-th smallest element in a BST
-
-
+    }*/
 
 }

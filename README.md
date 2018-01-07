@@ -101,7 +101,7 @@ Alternatively, this example:
 
 ```
 public void printAllElements(int[] strings) {
-    for (String string : strings) { // O(n)
+    for (Strings string : strings) { // O(n)
         System.out.print(string);
     }
 }
@@ -583,7 +583,7 @@ other option is call reference counting, we keep each object keeps track of how 
 C doesnt have a garbage collector, C++ has both, manual memory management.
 
 In java everything is mutable, with exception to strings
-String builder in java makes strings mutable
+Strings builder in java makes strings mutable
 
 react is a composition model
 
