@@ -271,12 +271,65 @@ public class SinglyLinkedList {
         SinglyLinkedListNode next = null; // create a point to next node for reference
 
         while (current != null) {
-            next = current.next; // first update the next node
+            next = current.next;
             current.next = prev; // make the current nodes next be the new previous, i.e. swap order
             prev = current; // update the previous
             current = next; // update the current
         }
         this.head = prev; // set head to be the prev
+    }
+
+    Node Reverse(Node head) {
+
+        Node temp = null;
+        Node current = head;
+
+        /* swap next and prev for all nodes of
+         doubly linked list */
+        while (current != null) {
+            temp = current.prev;
+            current.prev = current.next;
+            current.next = temp;
+            current = current.prev;
+        }
+
+        /* Before changing head, check for the cases like empty
+         list and list with only one node */
+        if (temp != null) {
+            head = temp.prev;
+        }
+
+        return head;
+
+    }
+
+    int GetNode(Node head, int n) {
+
+        Node runner = head;
+        Node friend = head;
+
+        for(int i = 0; i < n; i++) {
+            runner = runner.next;
+        }
+
+        while(runner.next != null) {
+            friend = friend.next;
+            runner = runner.next;
+        }
+
+        return friend.data;
+    }
+
+
+    void ReversePrint(Node head) {
+
+        if (head == null) {
+            return;
+        }
+
+        ReversePrint(head.next);
+        System.out.println(head.data);
+
     }
 
     /**

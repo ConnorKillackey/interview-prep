@@ -8,6 +8,23 @@ import java.util.HashMap;
  */
 public class Strings {
 
+    static String timeConversion(String s) {
+        String[] units = s.split(":");
+        int hours = Integer.parseInt(units[0]);
+        int minutes = Integer.parseInt(units[1]);
+        int seconds = Integer.parseInt(units[2].substring(0,2));
+        String AMPM = units[2].substring(2,4);
+
+        if (AMPM.equals("PM") && hours < 12) {
+            hours += 12;
+        } else if (AMPM.equals("AM") && hours == 12) {
+            hours = 0;
+        }
+
+        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+
+    }
+
     ///////////////////////////
     /* PARENTHESIS MATCHING */
     /////////////////////////

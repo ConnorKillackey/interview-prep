@@ -14,14 +14,59 @@ public class Searching {
         return true;
     }
 
-    /**
-     * Ice cream parlor problem.
-     * @param menu
-     * @param money
-     * @return
-     */
-    public static int[] findChoices(int[] menu, int money) {
-        return new int[]{ 1, 2 };
+
+    private static int indexOf(int[] menu, int value, int excludeIndex) {
+        for(int i = 1; i <= menu.length; i++) {
+            if (value == menu[i-1] && i != excludeIndex) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private static int[] getIndicesFromValues(int[] menu, int value1, int value2) {
+        int index1 = indexOf(menu, value1, -1);
+        int index2 = indexOf(menu, value2, index1);
+        int[] indices = {Math.min(index1, index2), Math.max(index1, index2)};
+        return indices;
+    }
+
+    public static int[] icecreamParlor(int money, int[] menu) {
+        int[] sortedMenu = menu.clone();
+        Arrays.sort(sortedMenu);
+
+        for (int i = 0; i < sortedMenu.length; i++) {
+            int complement = money - sortedMenu[i];
+
+            int location = Arrays.binarySearch(sortedMenu, i+1, sortedMenu.length, complement);
+            if (location >= 0 && location < sortedMenu.length && sortedMenu[location] == complement) {
+                int[] indices = getIndicesFromValues(menu, sortedMenu[i], complement);
+                return indices;
+            }
+        }
+
+        return null;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for(int a0 = 0; a0 < t; a0++){
+            int m = in.nextInt();
+            int n = in.nextInt();
+            int[] arr = new int[n];
+            for(int arr_i = 0; arr_i < n; arr_i++){
+                arr[arr_i] = in.nextInt();
+            }
+            int[] result = icecreamParlor(m, arr);
+            for (int i = 0; i < result.length; i++) {
+                System.out.print(result[i] + (i != result.length - 1 ? " " : ""));
+            }
+            System.out.println("");
+
+
+        }
+        in.close();
     }
 
      /**

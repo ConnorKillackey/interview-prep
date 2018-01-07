@@ -144,3 +144,78 @@ public class QueueArray {
         int value6 = myQueue.rear();
     }
 }
+
+
+class MyQueue<T> {
+
+    private Stack<T> newestItemsOnTop = new Stack<>();
+    private Stack<T> oldestItemsOnTop = new Stack<>();
+
+    public void enqueue(T item) {
+        newestItemsOnTop.push(item);
+    }
+
+    public void moveItems() {
+        if (oldestItemsOnTop.isEmpty()) {
+            while (!newestItemsOnTop.isEmpty()) {
+                oldestItemsOnTop.push(newestItemsOnTop.pop());
+            }
+        }
+    }
+
+    public T dequeue() {
+        moveItems();
+        return oldestItemsOnTop.pop();
+    }
+
+    public T peek() {
+        moveItems();
+        return oldestItemsOnTop.peek();
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        // create a new queue using my implementation
+        MyQueue<Integer> queue = new MyQueue<>();
+
+        // create a reader to read the user input
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        // read the number of queries the user wishes to make
+        int numQueries;
+        try {
+            numQueries = Integer.parseInt(reader.readLine());
+        } catch (IOException e) {
+            return;
+        }
+
+        // read all queries the user makes
+        for (int i = 0; i < numQueries; i++) {
+
+            String line;
+            try {
+                line = reader.readLine();
+            } catch (IOException e) {
+                return;
+            }
+
+            String[] values = line.split("\\s+");
+
+            int choice = Integer.parseInt(values[0]);
+
+            if (choice == 1) {
+                int data = Integer.parseInt(values[1]);
+                queue.enqueue(data);
+            } else {
+                if (choice == 2) {
+                    queue.dequeue();
+                } else {
+                    System.out.println(queue.peek());
+                }
+            }
+        }
+    }
+}

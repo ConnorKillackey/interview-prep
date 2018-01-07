@@ -55,6 +55,11 @@ public class BinaryTree {
     /* Traversals */
     ///////////////
 
+    //print level by level
+    // queue indicates number of nodes at level
+
+
+
     /**
      * Recursively traverses a binary tree inorder.
      * @param node The reference node for traversal.
@@ -285,6 +290,59 @@ public class BinaryTree {
         }
     }
 
+    static Node Insert(Node root, int value) {
+
+        if (root == null) {
+            root = new Node();
+            root.data = value;
+            return root;
+        }
+
+        if (value < root.data) {
+            root.left = Insert(root.left, value);
+        } else {
+            root.right = Insert(root.right, value);
+        }
+
+        return root;
+    }
+
+    static Node Insert(Node root, int value) {
+
+        Node newNode = new Node();
+        newNode.data = value;
+
+        if (root == null) {
+            root = newNode;
+            return root;
+        }
+
+        Stack<Node> nodes = new Stack<>();
+        nodes.push(root);
+
+        while(!nodes.isEmpty()) {
+
+            Node current = nodes.pop();
+
+            if (value < current.data) {
+                if (current.left == null) {
+                    current.left = newNode;
+                } else {
+                    nodes.push(current.left);
+                }
+            } else {
+                if (current.right == null) {
+                    current.right = newNode;
+                } else {
+                    nodes.push(current.right);
+                }
+            }
+        }
+
+        return root;
+    }
+
+
     /**
      * Checks if a binary tree is super balanced.
      * Super balanced is when a trees depth never differs by more than one.
@@ -393,5 +451,26 @@ public class BinaryTree {
 
         return check(root.left, root.data, lowerBound) && check(root.right, upperBound, root.data);
     }
+
+    static Node lca(Node root, int v1, int v2) {
+
+        if (root == null) {
+            return null;
+        }
+
+        if (root.data > v1 && root.data > v2) {
+            return lca(root.left, v1, v2);
+        }
+
+        if (root.data < v1 && root.data < v2) {
+            return lca(root.right, v1, v2);
+        }
+
+        return root;
+    }
+
+   // Find the k-th smallest element in a BST
+
+
 
 }
