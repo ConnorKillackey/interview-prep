@@ -9,6 +9,18 @@ import java.util.HashSet;
  */
 public class StringProblems {
 
+
+    // finding the longest palindrome in a given string,
+    // find the biggest common substring in 2 strings, "abcdef" "gbcdh" would return "bcd"
+    // build a palindrome
+    // Two texts are considered to "match" if they have a common substring of at least length n. Describe an algorithm to determine if two strings are matches.  
+    // Write a function that takes in two binary strings and returns their sum (also a binary string).  
+    // remove duplicates in a string.  
+
+    // given an array of strings, find all the lists of anagrams present. (same as below) 
+    // Given a list of strings, return a list of lists of strings, which represents the list grouping strings by whether they are anagrams of one another.  
+    // Given a string write a function which prints all the subsets of the string. Now make the function to return only unique solutions.
+
     ///////////////////////////////////////////
     /* PERMUTATIONS OF STRING IS PALINDROME */
     /////////////////////////////////////////

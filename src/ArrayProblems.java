@@ -1,7 +1,10 @@
 /**
- * Created by robertsaunders on 2018-01-06.
+ * Implementation of various different array problems.
+ * Author: Robert Saunders
  */
 public class ArrayProblems {
+
+    // fisher yates shuffle (get a random element to put at that index)
 
     // window sliding problem, largest sum of n consecutive numbers
 
@@ -14,4 +17,16 @@ public class ArrayProblems {
     // merging two sorted arrays
 
     // min and max of unsorted array
+
+    // quadruples
+
+    // longest sequence of increasing numbers
+
+    // finding maximum subarray sum (similar to Kadane's Algorithm) with the constraint that two numbers in the array that form the max sum cannot be next to each other.
+
+    // Given a sorted array, write a program to decide if two elements sum up to a third.  
+
+    // Given an array of positive ints and an integer K, determine if a subsequence in the array sums to K. Solve in linear time.  
+
+    // contiguous subsets
 }

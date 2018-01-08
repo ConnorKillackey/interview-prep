@@ -3,6 +3,8 @@
  * Author: Robert Saunders
  */
 public class StackProblems {
+    // implement a three stacks with one array
+    // sort a stack in ascending order
 }
 // bracket validator
 /*

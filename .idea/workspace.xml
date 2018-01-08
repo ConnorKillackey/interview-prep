@@ -2,54 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3628388c-a855-44d8-9d6e-248e47ca3450" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MathematicalProblems.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RecursionProblems.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/BinaryTree.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/BinaryTreeNode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/BinaryTreeNodeDepthPair.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/BitManipulation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/CakeType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/DynamicProgramming.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/Graph.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/GraphEdge.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/GraphVertex.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/Greedy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/Heap.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/HeapProblems.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/InfinityException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/NodeBounds.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/QueueArray.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/QueueLinkedList.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/Searching.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/SinglyLinkedList.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/SinglyLinkedListNode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/Sorting.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/StackArray.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/StackLinkedList.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/Strings.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/Testing.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/interview-prep/Trie.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Greedy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Mathematical.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/QueueLinkedList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Recursion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/StackLinkedList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Testing.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Array.java" afterPath="$PROJECT_DIR$/src/ArrayProblems.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/BinaryTree.java" afterPath="$PROJECT_DIR$/src/TreeProblems.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/BitManipulation.java" afterPath="$PROJECT_DIR$/src/BitManipulationProblems.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DynamicProgramming.java" afterPath="$PROJECT_DIR$/src/AlgorithmProblems.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Graph.java" afterPath="$PROJECT_DIR$/src/GraphProblems.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Heap.java" afterPath="$PROJECT_DIR$/src/HeapProblems.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/QueueArray.java" afterPath="$PROJECT_DIR$/src/QueueProblems.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Searching.java" afterPath="$PROJECT_DIR$/src/SearchingProblems.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/SinglyLinkedList.java" afterPath="$PROJECT_DIR$/src/LinkedListProblems.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Sorting.java" afterPath="$PROJECT_DIR$/src/SortingProblems.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/StackArray.java" afterPath="$PROJECT_DIR$/src/StackProblems.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Strings.java" afterPath="$PROJECT_DIR$/src/StringProblems.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Trie.java" afterPath="$PROJECT_DIR$/src/TrieProblems.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AlgorithmProblems.java" afterPath="$PROJECT_DIR$/src/AlgorithmProblems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ArrayProblems.java" afterPath="$PROJECT_DIR$/src/ArrayProblems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GraphProblems.java" afterPath="$PROJECT_DIR$/src/GraphProblems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MathematicalProblems.java" afterPath="$PROJECT_DIR$/src/MathematicalProblems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RecursionProblems.java" afterPath="$PROJECT_DIR$/src/RecursionProblems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/StackProblems.java" afterPath="$PROJECT_DIR$/src/StackProblems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/StringProblems.java" afterPath="$PROJECT_DIR$/src/StringProblems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TreeProblems.java" afterPath="$PROJECT_DIR$/src/TreeProblems.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,11 +25,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TrieProblems.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TrieProblems.java">
+      <file leaf-file-name="RecursionProblems.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RecursionProblems.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+            <state relative-caret-position="405">
+              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphProblems.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GraphProblems.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -78,18 +48,18 @@
       <file leaf-file-name="StackProblems.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StackProblems.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="480">
+              <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecursionProblems.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RecursionProblems.java">
+      <file leaf-file-name="AlgorithmProblems.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AlgorithmProblems.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+            <state relative-caret-position="-3922">
+              <caret line="59" column="53" lean-forward="true" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -108,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StringProblems.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StringProblems.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StringProblems.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4222">
-              <caret line="293" column="16" lean-forward="true" selection-start-line="293" selection-start-column="16" selection-end-line="293" selection-end-column="16" />
+            <state relative-caret-position="525">
+              <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,36 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HeapProblems.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/HeapProblems.java">
+      <file leaf-file-name="LinkedListProblems.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LinkedListProblems.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-              <folding>
-                <marker date="1515297936532" expanded="false" signature="1630:1641" ph=" { " />
-                <marker date="1515297936532" expanded="false" signature="1656:1662" ph=" }" />
-                <marker date="1515297936532" expanded="false" signature="3176:3195" ph=" { " />
-                <marker date="1515297936532" expanded="false" signature="3212:3226" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MathematicalProblems.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MathematicalProblems.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchingProblems.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SearchingProblems.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="47" column="20" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+            <state relative-caret-position="637">
+              <caret line="295" column="29" lean-forward="true" selection-start-line="295" selection-start-column="29" selection-end-line="295" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -158,18 +103,33 @@
       <file leaf-file-name="TreeProblems.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TreeProblems.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2485">
-              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state relative-caret-position="8587">
+              <caret line="661" column="34" lean-forward="true" selection-start-line="661" selection-start-column="34" selection-end-line="661" selection-end-column="34" />
+              <folding>
+                <element signature="e#13104#13105#0" expanded="true" />
+                <element signature="e#13165#13166#0" expanded="true" />
+                <element signature="e#15283#15284#0" expanded="true" />
+                <element signature="e#15355#15356#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArrayProblems.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ArrayProblems.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArrayProblems.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ArrayProblems.java">
+      <file leaf-file-name="MathematicalProblems.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MathematicalProblems.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -239,8 +199,14 @@
         <option value="$PROJECT_DIR$/src/Strings.java" />
         <option value="$PROJECT_DIR$/src/Heap.java" />
         <option value="$PROJECT_DIR$/src/Recursion.java" />
-        <option value="$PROJECT_DIR$/src/ArrayProblems.java" />
         <option value="$PROJECT_DIR$/src/QueueProblems.java" />
+        <option value="$PROJECT_DIR$/src/StackProblems.java" />
+        <option value="$PROJECT_DIR$/src/AlgorithmProblems.java" />
+        <option value="$PROJECT_DIR$/src/ArrayProblems.java" />
+        <option value="$PROJECT_DIR$/src/GraphProblems.java" />
+        <option value="$PROJECT_DIR$/src/RecursionProblems.java" />
+        <option value="$PROJECT_DIR$/src/MathematicalProblems.java" />
+        <option value="$PROJECT_DIR$/src/TreeProblems.java" />
         <option value="$PROJECT_DIR$/src/StringProblems.java" />
       </list>
     </option>
@@ -252,7 +218,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
+    <option name="x" value="72" />
+    <option name="y" value="133" />
     <option name="width" value="1680" />
     <option name="height" value="972" />
   </component>
@@ -305,6 +272,60 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interview-prep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interview-prep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TreeProblems.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interview-prep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interview-prep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkedListProblems.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interview-prep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interview-prep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlgorithmProblems.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -840,15 +861,15 @@
       <workItem from="1512955870548" duration="2118000" />
       <workItem from="1513109004522" duration="3659000" />
       <workItem from="1514144314831" duration="280000" />
-      <workItem from="1514990744709" duration="36812000" />
+      <workItem from="1514990744709" duration="56135000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160092000" />
+    <option name="totallyTimeSpent" value="179415000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="972" extended-state="6" />
+    <frame x="72" y="133" width="1680" height="972" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1059,28 +1080,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SinglyLinkedListNode.java" />
-    <entry file="file://$PROJECT_DIR$/src/GraphProblems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding>
-            <element signature="e#741#742#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BitManipulationProblems.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LinkedListProblems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="302" column="0" lean-forward="true" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1136,55 +1139,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AlgorithmProblems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5400">
-          <caret line="362" column="0" lean-forward="true" selection-start-line="362" selection-start-column="0" selection-end-line="362" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/StackProblems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TrieProblems.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MathematicalProblems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HeapProblems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-          <folding>
-            <marker date="1515297936532" expanded="false" signature="1630:1641" ph=" { " />
-            <marker date="1515297936532" expanded="false" signature="1656:1662" ph=" }" />
-            <marker date="1515297936532" expanded="false" signature="3176:3195" ph=" { " />
-            <marker date="1515297936532" expanded="false" signature="3212:3226" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RecursionProblems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1197,18 +1155,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ArrayProblems.java">
+    <entry file="file://$PROJECT_DIR$/src/HeapProblems.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding>
+            <marker date="1515297936532" expanded="false" signature="1630:1641" ph=" { " />
+            <marker date="1515297936532" expanded="false" signature="1656:1662" ph=" }" />
+            <marker date="1515297936532" expanded="false" signature="3176:3195" ph=" { " />
+            <marker date="1515297936532" expanded="false" signature="3212:3226" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TreeProblems.java">
+    <entry file="file://$PROJECT_DIR$/src/StackProblems.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2485">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="480">
+          <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1224,13 +1187,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GraphProblems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LinkedListProblems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="295" column="29" lean-forward="true" selection-start-line="295" selection-start-column="29" selection-end-line="295" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MathematicalProblems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AlgorithmProblems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3922">
+          <caret line="59" column="53" lean-forward="true" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RecursionProblems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeProblems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8587">
+          <caret line="661" column="34" lean-forward="true" selection-start-line="661" selection-start-column="34" selection-end-line="661" selection-end-column="34" />
+          <folding>
+            <element signature="e#13104#13105#0" expanded="true" />
+            <element signature="e#13165#13166#0" expanded="true" />
+            <element signature="e#15283#15284#0" expanded="true" />
+            <element signature="e#15355#15356#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/StringProblems.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4222">
-          <caret line="293" column="16" lean-forward="true" selection-start-line="293" selection-start-column="16" selection-end-line="293" selection-end-column="16" />
+        <state relative-caret-position="525">
+          <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ArrayProblems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

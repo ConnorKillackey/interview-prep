@@ -41,81 +41,14 @@ class InfinityException extends RuntimeException {
  */
 public class DynamicProgramming {
 
+    // number of islands
+    // Given a chess-like board where some spaces don't exist and others are blocked by another piece, output all the possible places where a knight could move with one step, two steps, and so on.  
+
     ////////////////
     /* Fibonacci */
     //////////////
 
     private Map<Integer, Integer> fibMemo = new HashMap<>();
-
-    /**
-     * Memoize version of the fibonacci number finder.
-     * @param n The nth fibonacci number to find.
-     * @return The nth fibonacci number.
-     */
-    public int fibMemoize(int n) {
-
-        if (n < 0) {
-            throw new IllegalArgumentException("n cannot be less than 0!");
-        }
-
-        if (n == 0 || n == 1) {
-            return n;
-        }
-
-        if (fibMemo.containsKey(n)) {
-            return fibMemo.get(n);
-        }
-
-        int result = fib(n-1) + fib(n-2);
-
-        fibMemo.put(n, result);
-
-        return result;
-    }
-
-    /**
-     * Non memoize version of the fibonacci number finder.
-     * @param n The nth fibonacci number to find.
-     * @return The nth fibonacci number.
-     */
-    public int fib(int n) {
-
-        if (n < 0) {
-            throw new IllegalArgumentException("n cannot be less than 0!");
-        }
-
-        if (n == 1 || n == 0) {
-            return n;
-        }
-
-        return fib(n-1) + fib(n-2);
-    }
-
-    /**
-     * Bottom up implementation of the fibonacci number finder.
-     * @param n The nth fibonacci number to find.
-     * @return The nth fibonacci number.
-     */
-    public int fibBottonUp(int n) {
-
-        if (n < 0) {
-            throw new IllegalArgumentException("n cannot be less than 0!");
-        } else if (n == 0 || n == 1) {
-            return n;
-        }
-
-        int prevPrev = 0; // 0th fibonacci number
-        int prev = 1; // 1st fibonacci number
-        int current = 0; // the current number we are on
-
-        for (int i = 1; i < n; i++) {
-            current = prevPrev + prev;
-            prevPrev = prev;
-            prev = current;
-        }
-
-        return current;
-    }
 
     /////////////////////
     /* The Cake Thief */
@@ -266,7 +199,7 @@ public class DynamicProgramming {
     /////////////////////////////
 
     /**
-     * Gets the highest product from integers in the input array.
+     * Gets the highest product from three integers in the input array.
      * Note: this implementation does not account for negative numbers.
      * @param nums The group of input integers.
      * @return The highest product of three numbers in the array.
