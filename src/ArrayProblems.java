@@ -4,6 +4,7 @@
  */
 public class ArrayProblems {
 
+    // problems to work through
     // fisher yates shuffle (get a random element to put at that index)
 
     // window sliding problem, largest sum of n consecutive numbers

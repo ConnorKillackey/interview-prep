@@ -243,7 +243,7 @@ class BinaryTreeProblems {
             throw new IllegalArgumentException("The tree must have something in it!");
         }
 
-        QueueProblems<BinaryTreeNode> nodes = new LinkedList<>();
+        Queue<BinaryTreeNode> nodes = new LinkedList<>();
 
         nodes.add(rootNode);
 
