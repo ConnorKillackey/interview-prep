@@ -44,7 +44,7 @@ class SinglyLinkedListNode {
  * Singly linked list only have one way traversal.
  * Author: Robert Saunders
  */
-public class SinglyLinkedList {
+class SinglyLinkedList {
 
 
     public SinglyLinkedListNode head = null; // pointer to the head of the list
@@ -112,6 +112,7 @@ public class SinglyLinkedList {
         this.head.next = node;
     }
 
+    /*
     Node InsertNth(Node head, int data, int position) {
 
         Node newNode = new Node();
@@ -136,7 +137,7 @@ public class SinglyLinkedList {
         return head;
     }
 
-
+*/
 
     /**
      * Deletes a node in a linked list, only using the reference to the node to delete.
@@ -157,6 +158,7 @@ public class SinglyLinkedList {
         nodeToDelete.next = nextNode.next;
     }
 
+    /*
     Node Delete(Node head, int position) {
 
         if (position == 0) {
@@ -175,7 +177,7 @@ public class SinglyLinkedList {
         current.next = current.next.next;
 
         return head;
-    }
+    }*/
 
 
     /**
@@ -276,6 +278,7 @@ public class SinglyLinkedList {
         this.head = prev; // set head to be the prev
     }
 
+    /*
     Node Reverse(Node head) {
 
         Node temp = null;
@@ -283,6 +286,7 @@ public class SinglyLinkedList {
 
         /* swap next and prev for all nodes of
          doubly linked list */
+    /*
         while (current != null) {
             temp = current.prev;
             current.prev = current.next;
@@ -292,6 +296,7 @@ public class SinglyLinkedList {
 
         /* Before changing head, check for the cases like empty
          list and list with only one node */
+      /*
         if (temp != null) {
             head = temp.prev;
         }
@@ -328,7 +333,7 @@ public class SinglyLinkedList {
         System.out.println(head.data);
 
     }
-
+*/
     /**
      * Checks if a value is in the linked list.
      * @param value The value to search for.
@@ -360,6 +365,7 @@ public class SinglyLinkedList {
      * To string override for a linked list.
      * @return The string representation of a linked list.
      */
+    /*
     @Override
     public StringProblems toString() {
         StringBuilder linkedListString = new StringBuilder();
@@ -376,7 +382,7 @@ public class SinglyLinkedList {
         linkedListString.append(node.value); // add the last node to the string
 
         return linkedListString.toString();
-    }
+    }*/
 
     /**
      * Main execution method for testing.

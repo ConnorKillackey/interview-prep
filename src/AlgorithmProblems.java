@@ -39,7 +39,7 @@ class InfinityException extends RuntimeException {
  * Has recursive and tabulation implementations.
  * Author: Robert Saunders
  */
-public class DynamicProgramming {
+class DynamicProgramming {
 
     // number of islands
     // Given a chess-like board where some spaces don't exist and others are blocked by another piece, output all the possible places where a knight could move with one step, two steps, and so on.  

@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * Implementation of various different searching algorithms.
  * Important to know the pros can cons of each.
@@ -118,7 +120,7 @@ public class SearchingProblems {
      * Main execution method used for testing problems.
      * @param args Arguments passed into execution.
      */
-    public static void main(StringProblems[] args) {
+    public static void main(String[] args) {
         System.out.println("Using binary search to find 0 in {1,2,3,4}: " + SearchingProblems.binarySearch(new int[]{1, 2, 3, 4}, 0)); // output should be false
         System.out.println("Using binary search to find 2 in {1,2,3,4}: " + SearchingProblems.binarySearch(new int[]{1,2,3,4}, 2)); // output should be true
     }

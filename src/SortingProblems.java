@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * Implementations of various different sorting algorithms.
  * Important to know the pros and cons of each.
@@ -103,15 +105,7 @@ public class SortingProblems {
         }
     }
 
-    /**
-     * Implementation of the counting sort algorithm.
-     * Good for sorting when you know the bounds of array.
-     * @param numArray The array to sort.
-     * @return The sorted array.
-     */
-    public static int[] countingSort(int[] numArray) {
-        return null;
-    }
+
 
     // top scores
 

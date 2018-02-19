@@ -11,6 +11,10 @@ class BinaryTreeNode {
     BinaryTreeNode left;
     BinaryTreeNode parent;
 
+    BinaryTreeNode() {
+
+    }
+
     BinaryTreeNode(int value) {
         this.value = value;
     }
@@ -650,6 +654,8 @@ class BinaryTreeProblems {
             }
             return successor;
         }
+
+        return null;
     }
 
     /**

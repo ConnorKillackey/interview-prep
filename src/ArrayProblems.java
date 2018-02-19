@@ -31,12 +31,13 @@ public class ArrayProblems {
                         triplet[0] = numArray[i];
                         triplet[1] = numArray[j];
                         triplet[2] = numArray[k];
+                        return triplet;
                     }
                 }
             }
         }
 
-        return triplet;
+        return null;
     }
 
     /**
@@ -56,7 +57,7 @@ public class ArrayProblems {
         for (int i = 0; i < numArray.length-2; i++) {
 
             left = i + 1;
-            right = numArray.length;
+            right = numArray.length-1;
 
             while(left < right) {
                 int sum = numArray[i] + numArray[left] + numArray[right];
@@ -64,6 +65,7 @@ public class ArrayProblems {
                     triplet[0] = numArray[i];
                     triplet[1] = numArray[left];
                     triplet[2] = numArray[right];
+                    break;
                 } else if (sum < target) {
                     left++;
                 } else {
@@ -109,4 +111,12 @@ public class ArrayProblems {
     // Given an array of integers, write an in-place function to bring all the non-zero elements to the left of the array keeping the original order.
 
     // Boggle game - given a board of letters (2d array) and a word (string), return whether the word exists in the board. From each letter you can move in all directions (including diagonals), but you cannot use the same letter twice.
+
+
+    public static void main(String[] args) {
+        int[] array = { 2, 4, 1, 7};
+        int[] triplet = ArrayProblems.goodTripletSum(array, 7);
+        int[] triplet2 = ArrayProblems.naiveTripletSum(array, 7);
+
+    }
 }
