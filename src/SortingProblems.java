@@ -35,26 +35,6 @@ public class SortingProblems {
         return result;
     }
 
-    /**
-     * Implementation of the merge sort algorithm.
-     * Splits array in half, sorts each half, then merges halfs.
-     * @param numArray The array to be sorted.
-     * @return The sorted array.
-     */
-    public static int[] mergeSort(int[] numArray) {
-        return null;
-    }
-
-    /**
-     * Implementation of the quicksort algorithm.
-     * @param numArray The array to be sorted.
-     * @param pivot The pivot point for the algorithm.
-     * @return The sorted algorithm.
-     */
-    public static int[] quickSort(int[] numArray, int pivot) {
-        return null;
-    }
-
     static int[] countingSort(int[] arr) {
 
         int[] countingArray = new int[100];
@@ -105,24 +85,11 @@ public class SortingProblems {
         }
     }
 
-
-
-    // top scores
-
-    /**
-     * Implementation of the heapsort algorithm.
-     * @param numArray The array to be sorted.
-     * @return The sorted array.
-     */
-    public static int[] heapsort(int[] numArray) {
-        return null;
-    }
-
     /**
      * Execution method used for testing.
      * @param args Arguments passed in for execution.
      */
-    public static void main(StringProblems args[]) {
+    public static void main(String args[]) {
 
     }
 }

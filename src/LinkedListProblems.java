@@ -6,8 +6,8 @@ import java.util.LinkedList;
  * Author: Robert Saunders
  */
 class SinglyLinkedListNode {
-    public int value;
-    public SinglyLinkedListNode next;
+    int value;
+    SinglyLinkedListNode next;
 
     /**
      * Default constructor for a node in a singly linked list.
@@ -47,8 +47,8 @@ class SinglyLinkedListNode {
 class SinglyLinkedList {
 
 
-    public SinglyLinkedListNode head = null; // pointer to the head of the list
-    public int size = 0; // counter to keep track of the size of the list
+    SinglyLinkedListNode head = null; // pointer to the head of the list
+    int size = 0; // counter to keep track of the size of the list
 
     /**
      * Constructor for linked list that sets initial head.
@@ -112,61 +112,66 @@ class SinglyLinkedList {
         this.head.next = node;
     }
 
-    /*
-    Node InsertNth(Node head, int data, int position) {
+    /**
+     * Inserts a node at the nth position in the linked list.
+     * @param head The head of the linked list.
+     * @param data The data to be added to the linked list.
+     * @param position The position to insert the node at.
+     * @return The head of the linked list.
+     */
+    public SinglyLinkedListNode InsertNth(SinglyLinkedListNode head, int data, int position) {
 
-        Node newNode = new Node();
-        newNode.data = data;
+        SinglyLinkedListNode newNode = new SinglyLinkedListNode();
+        newNode.value = data;
         newNode.next = head;
 
         if (head == null || position == 0) {
             return newNode;
         }
 
-        Node current = head;
+        SinglyLinkedListNode current = head;
         int currentPosition = 0;
         while(currentPosition != position-1) {
             current = current.next;
             currentPosition++;
         }
 
-        Node temp = current.next;
+        SinglyLinkedListNode temp = current.next;
         current.next = newNode;
         newNode.next = temp;
 
         return head;
     }
 
-*/
-
     /**
      * Deletes a node in a linked list, only using the reference to the node to delete.
      * @param nodeToDelete The node to delete.
      */
     public void deleteNode(SinglyLinkedListNode nodeToDelete) {
-        // cannot solve this problem without a node to delete
-        // or if the node to delete is the last in the list
+
         if (nodeToDelete == null || nodeToDelete.next == null) {
             return;
         }
 
-        // instead of deleting the node to delete
-        // we modify it with the contents of the next node
-        // subsequently deleting that node instead
         SinglyLinkedListNode nextNode = nodeToDelete.next;
         nodeToDelete.value = nextNode.value;
         nodeToDelete.next = nextNode.next;
     }
 
-    /*
-    Node Delete(Node head, int position) {
+    /**
+     * Deletes a node at a given position.
+     * @param head The head of the linked list.
+     * @param position The position to deleted the node from.
+     * @return The head of the linked list.
+     */
+    public SinglyLinkedListNode deleteNth(SinglyLinkedListNode head, int position) {
 
         if (position == 0) {
             head = head.next;
             return head;
         }
 
-        Node current = head;
+        SinglyLinkedListNode current = head;
         int currentPosition = 0;
 
         while(currentPosition != position-1) {
@@ -177,30 +182,22 @@ class SinglyLinkedList {
         current.next = current.next.next;
 
         return head;
-    }*/
-
+    }
 
     /**
-     * Removes duplicates from a linkedlist, this method uses a buffer to keep track of values.
+     * Removes duplicates from a linked list, this method uses a buffer to keep track of values.
      * See below for alternative method that doesn't use a buffer.
      */
     public void removeDuplicatesWithBuffer() {
 
-        // first check if the linked list is empty
         if (isEmpty()) {
             throw new IllegalArgumentException("Cannot remove duplicates from an empty list!");
         }
 
-        // create a buffer to store values to cross references against
-        // create a current (conductor) for list traversal
-        // initialize a prev node pointer to update as we move through the list
         HashMap<Integer, Boolean> buffer = new HashMap<>();
         SinglyLinkedListNode current = this.head;
         SinglyLinkedListNode prev = null;
 
-        // traverse the list
-        // check buffer, remove node if needed
-        // otherwise add to buffer and move to next
         while (current != null) {
             if (buffer.containsKey(current.value)) {
                 prev.next = current.next;
@@ -214,31 +211,23 @@ class SinglyLinkedList {
     }
 
     /**
-     * Removes duplicates from a linkedlist, this method does not use a buffer.
+     * Removes duplicates from a linked list, this method does not use a buffer.
      * Instead we use a runner to compare are nodes prior to current node.
      */
     public void removeDuplicatesWithoutBuffer() {
 
-        // first check if the list is empty
-        // can't find duplicates if the list is empty
         if (isEmpty()) {
             throw new IllegalArgumentException("The list is empty so there can't be any duplicates!");
         }
 
-        // have to start one behind to begin runner
-        // set current to be the prev next
         SinglyLinkedListNode prev = this.head;
         SinglyLinkedListNode current = prev.next;
 
-        // iterate through the list until end
         while (current != null) {
-            // create a runner, runner always starts are head
+
             SinglyLinkedListNode runner = head;
 
-            // keep running until runner reaches current
             while (runner != current) {
-                // if the runner value and the current are equal
-                // lets delete current and move to next iteration
                 if (runner.value == current.value) {
                     SinglyLinkedListNode tmp = current.next;
                     prev.next = tmp;
@@ -248,8 +237,6 @@ class SinglyLinkedList {
                 runner = runner.next;
             }
 
-            // if the runner reaches the current
-            // update prev and current for next run
             if (runner == current) {
                 prev = current;
                 current = current.next;
@@ -257,58 +244,55 @@ class SinglyLinkedList {
         }
     }
 
-    public void findNthToLastNodeIterative(int n) {
-
-    }
-
     /**
      * Reverses a linked list.
      */
     public void reverseList() {
-        SinglyLinkedListNode prev = null; // create a pointer to prev node for reference
-        SinglyLinkedListNode current = this.head; // set the current node to head
-        SinglyLinkedListNode next = null; // create a point to next node for reference
+        SinglyLinkedListNode prev = null;
+        SinglyLinkedListNode current = this.head;
+        SinglyLinkedListNode next = null;
 
         while (current != null) {
             next = current.next;
-            current.next = prev; // make the current nodes next be the new previous, i.e. swap order
-            prev = current; // update the previous
-            current = next; // update the current
+            current.next = prev;
+            prev = current;
+            current = next;
         }
-        this.head = prev; // set head to be the prev
+
+        this.head = prev;
     }
 
-    /*
-    Node Reverse(Node head) {
 
-        Node temp = null;
-        Node current = head;
+    public SinglyLinkedListNode Reverse(SinglyLinkedListNode head) {
+
+        SinglyLinkedListNode temp = null;
+        SinglyLinkedListNode current = head;
 
         /* swap next and prev for all nodes of
          doubly linked list */
-    /*
+        /*
         while (current != null) {
             temp = current.prev;
             current.prev = current.next;
             current.next = temp;
             current = current.prev;
         }
-
+        */
         /* Before changing head, check for the cases like empty
          list and list with only one node */
-      /*
+        /*
         if (temp != null) {
             head = temp.prev;
         }
-
+        */
         return head;
 
     }
 
-    int GetNode(Node head, int n) {
+    int getNode(SinglyLinkedListNode head, int n) {
 
-        Node runner = head;
-        Node friend = head;
+        SinglyLinkedListNode runner = head;
+        SinglyLinkedListNode friend = head;
 
         for(int i = 0; i < n; i++) {
             runner = runner.next;
@@ -319,21 +303,23 @@ class SinglyLinkedList {
             runner = runner.next;
         }
 
-        return friend.data;
+        return friend.value;
     }
 
-
-    void ReversePrint(Node head) {
+    /**
+     * Recursively prints a linked list in reverse.
+     * @param head The head of the linked list.
+     */
+    public void reversePrintList(SinglyLinkedListNode head) {
 
         if (head == null) {
             return;
         }
 
-        ReversePrint(head.next);
-        System.out.println(head.data);
-
+        reversePrintList(head.next);
+        System.out.println(head.value);
     }
-*/
+
     /**
      * Checks if a value is in the linked list.
      * @param value The value to search for.
@@ -341,14 +327,10 @@ class SinglyLinkedList {
      */
     public Boolean isValuePresent(int value) {
 
-        // first check if the list is empty
-        // if it is empty the value can't be present
         if (this.isEmpty()) {
             return false;
         }
 
-        // start at the head
-        // traverse down the list until find the value
         SinglyLinkedListNode node = this.head;
 
         while (node.next != null) {
@@ -365,24 +347,25 @@ class SinglyLinkedList {
      * To string override for a linked list.
      * @return The string representation of a linked list.
      */
-    /*
     @Override
-    public StringProblems toString() {
+    public String toString() {
         StringBuilder linkedListString = new StringBuilder();
 
         SinglyLinkedListNode node = this.head;
 
-        while(node.next != null) { // go node by node appending them to the string until last one
-
+        while(node.next != null) {
             linkedListString.append(node.value + " -> ");
-
-            node = node.next; // move to the next node
+            node = node.next;
         }
 
-        linkedListString.append(node.value); // add the last node to the string
+        linkedListString.append(node.value);
 
         return linkedListString.toString();
-    }*/
+    }
+
+    //////////////
+    /* TESTING */
+    ////////////
 
     /**
      * Main execution method for testing.

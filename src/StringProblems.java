@@ -9,7 +9,6 @@ import java.util.HashSet;
  */
 public class StringProblems {
 
-
     // finding the longest palindrome in a given string,
     // find the biggest common substring in 2 strings, "abcdef" "gbcdh" would return "bcd"
     // build a palindrome
@@ -141,7 +140,7 @@ public class StringProblems {
      * @param checkString The string to check.
      * @return True if is a palindrome, false otherwise.
      */
-    public static boolean isPalindrome(java.lang.String checkString) {
+    public static boolean isPalindrome(String checkString) {
         for (int i = 0; i < checkString.length() - 1; i++) {
             int difference = checkString.length() - (i+1);
             if ((difference > 1) && (checkString.charAt(i) != checkString.charAt(difference))) {

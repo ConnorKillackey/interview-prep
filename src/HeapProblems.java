@@ -5,55 +5,6 @@ import java.util.*;
  * Note: In java you can use PriorityQueue to achieve the same thing.
  * Author: Robert Saunders
  */
-public class HeapProblems {
-
-    // two heaps, one is a min heap and the other is a max heap
-    // characteristics of a heap is that we always add a new node to the first available position (left most position), then we can heapify up
-    // when we want to remove the min or max element we pop it off the top and take the bottom node and heapify down
-    // we could represent these heaps using a tree and custom construct, but because the children are predictable we can use an array
-
-    // in a heap all that matters is that the parent node is greater or less than the children, there is no distinction between the left and right, such as a binary search tree
-
-
-    //           1
-    //          / \
-    //         2   3
-    //        / \
-    //       6   5
-
-    // [1, 2, 3, 6, 5]
-    //  0  1  2  3  4
-    // left child are 2n+1
-    // right child is 2n+2
-
-    // parent node is (n-1)/2
-/*
-    int[] heap;
-    int capacity;
-
-    Heap() {
-        this.heap = new int[10];
-        this.capacity = 10;
-    }
-
-    Heap(int capacity) {
-        this.heap = new int[capacity];
-        this.capacity = capacity;
-    }
-
-    public int getParentIndex(int childIndex) { return (childIndex-1)/ 2; }
-    public int getLeftChildIndex(int parentIndex) { return 2*parentIndex + 1; }
-    public int getRightChildIndex(int parentIndex) { return 2*parentIndex + 2; }
-
-    public poll() {
-        // removes the min or max value
-    }
-
-    public peek() {
-        return heap[0];
-    }
-}
-
 class HeapProblems {
 
     private static void addToHeap(int num, PriorityQueue<Integer> lowers, PriorityQueue<Integer> biggers) {
@@ -88,7 +39,7 @@ class HeapProblems {
     private static double[] getMedians(int[] numbers) {
         PriorityQueue<Integer> biggers = new PriorityQueue<Integer>();
         PriorityQueue<Integer> lowers = new PriorityQueue<Integer>(new Comparator<Integer>() {
-            @Override           2 4
+            @Override
             public int compare(Integer one, Integer two) {
                 return two - one;
             }
@@ -106,7 +57,15 @@ class HeapProblems {
         return medians;
     }
 
-    public static void main(Strings[] args) {
+    //////////////
+    /* TESTING */
+    ////////////
+
+    /**
+     * Main execution method, used for testing.
+     * @param args The arguments passed into execution.
+     */
+    public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
@@ -121,5 +80,4 @@ class HeapProblems {
             System.out.println(median);
         }
     }
-    */
 }

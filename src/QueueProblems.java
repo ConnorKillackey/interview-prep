@@ -145,6 +145,7 @@ public class QueueProblems {
     }
 }
 
+// Queue implemented with two queues
 /*
 class MyQueue<T> {
 
@@ -171,52 +172,6 @@ class MyQueue<T> {
     public T peek() {
         moveItems();
         return oldestItemsOnTop.peek();
-    }
-}
-
-public class Solution {
-
-    public static void main(Strings[] args) {
-
-        // create a new queue using my implementation
-        MyQueue<Integer> queue = new MyQueue<>();
-
-        // create a reader to read the user input
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-        // read the number of queries the user wishes to make
-        int numQueries;
-        try {
-            numQueries = Integer.parseInt(reader.readLine());
-        } catch (IOException e) {
-            return;
-        }
-
-        // read all queries the user makes
-        for (int i = 0; i < numQueries; i++) {
-
-            Strings line;
-            try {
-                line = reader.readLine();
-            } catch (IOException e) {
-                return;
-            }
-
-            Strings[] values = line.split("\\s+");
-
-            int choice = Integer.parseInt(values[0]);
-
-            if (choice == 1) {
-                int data = Integer.parseInt(values[1]);
-                queue.enqueue(data);
-            } else {
-                if (choice == 2) {
-                    queue.dequeue();
-                } else {
-                    System.out.println(queue.peek());
-                }
-            }
-        }
     }
 }
 */

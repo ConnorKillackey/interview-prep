@@ -26,7 +26,7 @@ public class RecursionProblems {
             return 1;
         }
 
-        return countPathsRecursive(rows-1, cols) + countPathsRecursive(rows, cols - 1);
+        return countPathsRecursive(rows-1, cols) + countPathsRecursive(rows, cols-1);
     }
 
     /**
@@ -48,7 +48,7 @@ public class RecursionProblems {
             countPaths[0][c] = 1;
         }
 
-        for(int row = 1; row < rows; row ++) {
+        for(int row = 1; row < rows; row++) {
             for (int col = 1; col < cols; col++) {
                 countPaths[row][col] = countPaths[row][col-1] + countPaths[row-1][col];
             }
@@ -81,7 +81,7 @@ public class RecursionProblems {
             return fibMemo.get(n);
         }
 
-        int result = fib(n-1) + fib(n-2);
+        int result = fibMemoize(n-1, fibMemo) + fibMemoize(n-2, fibMemo);
 
         fibMemo.put(n, result);
 
@@ -116,13 +116,15 @@ public class RecursionProblems {
 
         if (n < 0) {
             throw new IllegalArgumentException("n cannot be less than 0!");
-        } else if (n == 0 || n == 1) {
+        }
+
+        if (n == 0 || n == 1) {
             return n;
         }
 
-        int prevPrev = 0; // 0th fibonacci number
-        int prev = 1; // 1st fibonacci number
-        int current = 0; // the current number we are on
+        int prevPrev = 0;
+        int prev = 1;
+        int current = 0;
 
         for (int i = 1; i < n; i++) {
             current = prevPrev + prev;

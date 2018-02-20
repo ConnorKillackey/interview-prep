@@ -19,6 +19,10 @@ public class BitManipulationProblems {
         return result;
     }
 
+    //////////////
+    /* TESTING */
+    ////////////
+
     /**
      * Main execution method, used for testing.
      * @param args The arguments passed into execution.

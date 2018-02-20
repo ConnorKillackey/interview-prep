@@ -7,16 +7,6 @@ import java.util.*;
  */
 public class SearchingProblems {
 
-    public static Boolean binarySearchRecursive(int[] array, int target) {
-        return true;
-    };
-
-
-    public static Boolean binarySearchIterative(int[] array, int target) {
-        return true;
-    }
-
-
     private static int indexOf(int[] menu, int value, int excludeIndex) {
         for(int i = 1; i <= menu.length; i++) {
             if (value == menu[i-1] && i != excludeIndex) {
@@ -48,27 +38,6 @@ public class SearchingProblems {
         }
 
         return null;
-    }
-
-    public static void main(StringProblems[] args) {
-        Scanner in = new Scanner(System.in);
-        int t = in.nextInt();
-        for(int a0 = 0; a0 < t; a0++){
-            int m = in.nextInt();
-            int n = in.nextInt();
-            int[] arr = new int[n];
-            for(int arr_i = 0; arr_i < n; arr_i++){
-                arr[arr_i] = in.nextInt();
-            }
-            int[] result = icecreamParlor(m, arr);
-            for (int i = 0; i < result.length; i++) {
-                System.out.print(result[i] + (i != result.length - 1 ? " " : ""));
-            }
-            System.out.println("");
-
-
-        }
-        in.close();
     }
 
      /**

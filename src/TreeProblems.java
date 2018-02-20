@@ -11,9 +11,7 @@ class BinaryTreeNode {
     BinaryTreeNode left;
     BinaryTreeNode parent;
 
-    BinaryTreeNode() {
-
-    }
+    BinaryTreeNode() {}
 
     BinaryTreeNode(int value) {
         this.value = value;
